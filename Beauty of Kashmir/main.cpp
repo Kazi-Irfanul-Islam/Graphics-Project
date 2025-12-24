@@ -1,7 +1,7 @@
 #include <GL/freeglut.h>
 #include<bits/stdc++.h>
 using namespace std;
-
+float bladeAngle = 0.0f;
 
 void quads(float r, float g, float b, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
     glColor3f(r, g, b);
@@ -1254,18 +1254,201 @@ glColor3f(0.376f, 0.455f, 0.627f);
     glVertex2f(1042.4133418143028, 916.8639483851023);
     glVertex2f(1041.4334899340638, 911.0213875092188);
     glVertex2f(997.2502183605638, 1038.0807763271598);
-
-
-
-
-
-
     glEnd();
 
 
 }
+
+
+void SecondMount_part4()
+{
+    glBegin(GL_POLYGON);
+    glColor3f(0.184f, 0.282f, 0.467f);
+    glVertex2f(1213.4934716260068, 956.2271770426643);
+    glVertex2f(1216.0423778270092, 952.131052512684);  // F49
+    glVertex2f(1220.8552169509996, 946.743545030234);  // G49
+    glVertex2f(1230.0, 940.0);                         // H49
+    glVertex2f(1239.7474063481561, 931.012027102377);  // I49
+    glVertex2f(1247.7927493613938, 923.97235196627);   // J49
+    glVertex2f(1261.2255988567103, 913.628339520421);  // K49
+    glVertex2f(1271.785111561585, 904.864662309867);   // L49
+    glVertex2f(1278.507700024679, 900.483256015525);   // M49
+    glVertex2f(1283.4205033007722, 894.546947643501);  // N49
+    glVertex2f(1288.845056918125, 891.27174558913);    // O49
+    glVertex2f(1297.0330623782804, 887.99654327424);   // P49
+    glVertex2f(1305.5281180431914, 885.028392129524);  // Q49
+    glVertex2f(1313.7161235033468, 882.264939452296);  // R49
+    glVertex2f(1322.108829100006, 879.19443740513);    // S49
+    glVertex2f(1330.603884764917, 877.045085971842);   // T49
+    glVertex2f(1341.4529919996228, 874.895734538555);  // U49
+    glVertex2f(1350.0, 870.0);                         // V49
+    glVertex2f(1358.647803465949, 867.833579829267);   // W49
+    glVertex2f(1364.9935076975694, 863.227826757659);  // Z49
+    glVertex2f(1371.8509622704494, 857.086822662241);  // A50
+    glVertex2f(1376.1217258798313, 850.863625814521);  // B50
+    glVertex2f(1380.5009518394259, 845.52310735112);   // C50
+    glVertex2f(1385.8414713023458, 839.862155722378);  // D50
+    glVertex2f(1393.3181985504339, 832.171803694034);  // E50
+    glVertex2f(1400.1540634629716, 825.229133923485);  // F50
+    glVertex2f(1407.5239803218014, 819.034139819426);  // G50
+    glVertex2f(1413.7189828987887, 813.052749017631);  // H50
+    glVertex2f(1420.0207958650344, 806.4305048833);   // I50
+    glVertex2f(1426.9634711668305, 800.128691917);    // J50
+    glVertex2f(1438.4989932067379, 791.370233997);    // K50
+    glVertex2f(1449.4611978329792, 787.218164074);    // L50
+    glVertex2f(1459.469616911119, 783.16069883);      // M50
+    glVertex2f(1471.912516305563, 778.56223606);      // N50
+    glVertex2f(1482.5971799160095, 775.992505837);    // O50
+    glVertex2f(1491.388358835997, 771.79979037);      // P50
+    glVertex2f(1500.5852844753688, 764.766847602);    // Q50
+    glVertex2f(1510, 760);                            // R50
+    glVertex2f(1519.79062919288, 751.91820148779);    // S50
+    glVertex2f(1529.1228037387132, 745.69675179);     // T50
+    glVertex2f(1541.159956413773, 737.176070583);     // U50
+    glVertex2f(1550.3500690772332, 728.269307774);    // V50
+    glVertex2f(1558.5569505620183, 719.50602754);     // W50
+    glVertex2f(1571.3541216908357, 709.073551080);    // Z50
+    glVertex2f(1580, 700);                            // A51
+    glVertex2f(1590, 690);                            // B51
+    glVertex2f(1600.42595610304, 685.704803822);      // C51
+    glVertex2f(1611.9712300562123, 677.080623251);    // D51
+    glVertex2f(1623.099204950836, 670.125638498);     // E51
+    glVertex2f(1636.3249463364025, 665.2566180);      // F51
+    glVertex2f(1650, 660);                            // G51
+    glVertex2f(1663.031663071206, 652.545980434);     // H51
+    glVertex2f(1675.1710797688438, 646.119230118);    // I51
+    glVertex2f(1688.167396468668, 641.120647719);     // J51
+    glVertex2f(1699.3070964970887, 634.69389705);   // K51
+    glVertex2f(1712.1605965298818, 628.69559704);   // L51
+    glVertex2f(1720.872413218775, 623.268563693);   // M51
+    glVertex2f(1733.583096584537, 617.984347012);   // N51
+    glVertex2f(1745.7143128129972, 613.46702511);   // O51
+    glVertex2f(1762.8887540721682, 605.22637892);   // P51
+    glVertex2f(1628.8664538939274, 552.4503969058619);
+    glVertex2f(1355.7224666932439, 513.3212860829555);
+    glVertex2f(1223.3487316499657, 562.8404805762242);
+    glVertex2f(989.0663588267987, 727.158881744794);
+    glVertex2f(1013.1614338137927, 905.1304319663395);
+    glVertex2f(1080, 1020);
+    glEnd();
+
+}
+
+
+void SecondMount_part5()
+{
+    glBegin(GL_POLYGON);
+    glColor3f(0.208f, 0.314f, 0.506f);
+    glVertex2f(1133.3587866203306, 873.80682187);   // V51
+    glVertex2f(1137.6524973232824, 870.45236738);   // W51
+    glVertex2f(1142.6171003235704, 863.74344441);   // Z51
+    glVertex2f(1155.9007678108273, 851.53320602);   // A52
+    glVertex2f(1161.9387984868533, 845.49517392);   // B52
+    glVertex2f(1169.452792217019, 837.176109393);   // C52
+    glVertex2f(1173.3439675415689, 832.61404181);   // D52
+    glVertex2f(1176.6984290282498, 828.18615265);   // E52
+    glVertex2f(1181.9313889474724, 823.35572114);   // F52
+    glVertex2f(1187.4327057856292, 820.403802009);  // G52
+    glVertex2f(1191.726416488581, 816.78098350);    // H52
+    glVertex2f(1196.5568410294018, 811.81638050);   // I52
+    glVertex2f(1199.9113025160827, 806.44924221);   // J52
+    glVertex2f(1200, 800);                          // K52
+    glVertex2f(1200.3138378944845, 794.37318086);   // L52
+    glVertex2f(1197.6302687051398, 789.27439940);   // M52
+    glVertex2f(1195.8859487320656, 783.23636873);   // N52
+    glVertex2f(1195.2150564347294, 778.27176573);   // O52
+    glVertex2f(1193.873271840057, 773.17298427);    // P52
+    glVertex2f(1193.7390933805898, 768.61091565);   // Q52
+    glVertex2f(1198.4353394619432, 761.09692292);   // R52
+    glVertex2f(1201.224176882829, 755.30161352);    // S52
+    glVertex2f(1206.7093547639408, 749.03284630);   // T52
+    glVertex2f(1212.1945326450527, 739.62968154);   // U52
+    glVertex2f(1218.2674081562836, 731.79371814);   // V52
+    glVertex2f(1222.9689891972369, 723.95774474);   // W52
+    glVertex2f(1226.6910741879913, 716.121775344);  // Z52
+    glVertex2f(1231.7844536490238, 708.48170715);   // A53
+    glVertex2f(1235.702437849818, 702.60473085);    // B53
+    glVertex2f(1240.2081196807314, 695.74825850);   // C53
+    glVertex2f(1244.9097007216844, 688.10818930);   // D53
+    glVertex2f(1239.2286236305329, 692.22207271);   // E53
+    glVertex2f(1232.5680504891827, 698.88264586);   // F53
+    glVertex2f(1227.0828726080708, 705.15142958);   // G53
+    glVertex2f(1222.9689891972369, 710.04890083);   // H53
+    glVertex2f(1216.700214475966, 717.29717164);    // I53
+    glVertex2f(1209.0601452844173, 724.74134585);   // J53
+    glVertex2f(1202.7913705631465, 729.83472104);   // K53
+    glVertex2f(1196.326696631836, 735.71169734);    // L53
+    glVertex2f(1188.0989298101683, 744.91896021);   // M53
+    glVertex2f(1180.26296140858, 751.77543257);     // N53
+    glVertex2f(1172.818791427071, 757.65240837);    // O53
+    glVertex2f(1164.591024605403, 765.29247806);    // P53
+    glVertex2f(1160, 770);                          // Q53
+    glVertex2f(1157.0216300184345, 774.88037787);   // R53
+    glVertex2f(1155.7805232755309, 783.79378046);   // S53
+    glVertex2f(1156.0061790469679, 794.06111344);   // T53
+    glVertex2f(1154.2009328754716, 805.56956278);   // U53
+    glVertex2f(1155.1035559612199, 814.48296576);   // V53
+    glVertex2f(1151.5007159216802, 823.12174980);   // W53
+    glVertex2f(1147.8757030107156, 833.99678537);   // Z53
+    glVertex2f(1144.0168182990437, 842.06536566);   // A54
+    glVertex2f(1140, 850);                          // B54
+    glVertex2f(1138.0896504249629, 857.73799553);   // C54
+    glVertex2f(1135.6790137831752, 862.55926881);   // D54
+    glVertex2f(1132.849135986294, 867.79978325);    // E54
+    glVertex2f(1132.0750404251885, 871.65564051);   // F54
+    glEnd();
+
+}
+
+void SecondMount_part6()
+{
+    glBegin(GL_POLYGON);
+    glColor3f(0.208f, 0.314f, 0.506f);
+    // --- New Points from image_70e10d.png (G54 to H55) ---
+    glVertex2f(1298.2394169862591, 698.5899662179515); // G54
+    glVertex2f(1310.5837608438699, 676.0995863129904); // H54
+    glVertex2f(1324.450010108583, 654.1165082103967);  // I54
+    glVertex2f(1332.0595371440963, 641.7721643527864); // J54
+    glVertex2f(1340, 630);                             // K54
+    glVertex2f(1348.4622954206475, 622.832897064398);  // L54
+    glVertex2f(1359.6229350727338, 616.0688730328308); // M54
+    glVertex2f(1370, 610);                             // N54
+    glVertex2f(1380.0841077682253, 604.0627303767989); // O54
+    glVertex2f(1392.2593510250465, 597.6369075468099); // P54
+    glVertex2f(1401.728984669241, 592.7329901239236);  // Q54
+    glVertex2f(1409.6767129063328, 587.8290727010374); // R54
+    glVertex2f(1418.8081453489488, 581.4032498710485); // S54
+    glVertex2f(1428.108678392354, 577.0066342505297);  // T54
+    glVertex2f(1440, 570);                             // U54
+    glVertex2f(1434.811497954604, 577.323186819183);   // V54
+    glVertex2f(1428.0477657924878, 583.3654542173398); // W54
+    glVertex2f(1421.6447660123513, 589.3175385200018); // Z54
+    glVertex2f(1414.0693859907815, 595.810721395633);  // A55
+    glVertex2f(1408.297667879109, 600.4100592658718);  // B55
+    glVertex2f(1401.0830202395186, 607.8952561919467); // C55
+    glVertex2f(1394.2291049819078, 614.2080728765882); // D55
+    glVertex2f(1388.1868375837507, 620.4307064657348); // E55
+    glVertex2f(1383.3169504270272, 625.9318752909224); // F55
+    glVertex2f(1378.2666970793139, 630.8017624476458); // G55
+    glVertex2f(1371.5931480126926, 635.8520157953591); // H55
+    // --- New Points from image_70e4b0.png (I55 to N55) ---
+    glVertex2f(1363.6304548075636, 643.795046971408);  // I55
+    glVertex2f(1352.8612068786538, 653.5852723613259); // J55
+    glVertex2f(1343.9101436650144, 660.2985697715552); // K55
+    glVertex2f(1330.0, 670.0);                         // L55
+    glVertex2f(1318.832974906547, 680.399144063904);   // M55
+    glVertex2f(1308.4159701310539, 690.0373073608553); // N55
+
+    glEnd();
+
+}
+
+
 void Mountain() {
 
+    SecondMount_part4();
+    SecondMount_part5();
+    SecondMount_part6();
     SecondMount_part3();
     SecondMount_part2();
     SecondMount_part1();
@@ -1512,6 +1695,415 @@ void rightbigField()
     glEnd();
 }
 
+void drawCircleAtPosition(float centerX, float centerY, float radius, int r, int g, int b) {
+    const int segments = 100;
+    const float PI = 3.14159265359f;
+
+    glColor3ub(r, g, b);
+    glBegin(GL_TRIANGLE_FAN);
+        glVertex2f(centerX, centerY);
+        for (int i = 0; i <= segments; i++) {
+            float theta = 2.0f * PI * (float)i / (float)segments;
+            glVertex2f(centerX + (radius * cos(theta)), centerY + (radius * sin(theta)));
+        }
+    glEnd();
+}
+
+
+void windmill()
+{
+
+    //left part
+    glBegin(GL_QUADS);
+    glColor3f(0.502f, 0.353f, 0.255f);
+    glVertex2f(2105,764);
+    glVertex2f(2153,764);
+    glVertex2f(2171,1005);
+    glVertex2f(2140,1005);
+    glEnd();
+
+
+    glBegin(GL_QUADS);
+    glColor3f(0.35f, 0.25f, 0.15f);
+    glVertex2f(2153,764);
+    glVertex2f(2247,764);
+    glVertex2f(2299,1005);
+    glVertex2f(2171,1005);
+    glEnd();
+
+
+    glBegin(GL_QUADS);
+    glColor3f(0.380f, 0.251f, 0.176f);
+    glVertex2f(2247,764);
+    glVertex2f(2333,764);
+    glVertex2f(2299,1005);
+    glVertex2f(2237,1005);
+    glEnd();
+
+
+    glBegin(GL_QUADS);
+    glColor3f(0.502f, 0.353f, 0.255f);
+    glVertex2f(2110,675);
+    glVertex2f(2151,675);
+    glVertex2f(2153,764);
+    glVertex2f(2117,764);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.35f, 0.25f, 0.15f);
+    glVertex2f(2151,675);
+    glVertex2f(2247,674);
+    glVertex2f(2247,764);
+    glVertex2f(2153,764);
+    glEnd();
+
+
+    glBegin(GL_QUADS);
+    glColor3f(0.380f, 0.251f, 0.176f);
+    glVertex2f(2247,674);
+    glVertex2f(2333,674);
+    glVertex2f(2319,764);
+    glVertex2f(2247,764);
+    glEnd();
+
+
+    //chad
+
+
+    glBegin(GL_QUADS);
+    glColor3f(0.247f, 0.165f, 0.137f);
+    glVertex2f(2192,1114);
+    glVertex2f(2263,1114);
+    glVertex2f(2337,1001);
+    glVertex2f(2273,1001);
+    glEnd();
+
+
+    glBegin(GL_QUADS);
+    glColor3f(0.247f, 0.165f, 0.137f);
+    glVertex2f(2109,1001);
+    glVertex2f(2130,1001);
+    glVertex2f(2202,1100);
+    glVertex2f(2192,1114);
+    glEnd();
+
+    glBegin(GL_TRIANGLES);
+    glColor3f(0.408f, 0.278f, 0.196f);
+    glVertex2f(2130,1002);
+    glVertex2f(2273,1002);
+    glVertex2f(2202,1100);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.247f, 0.165f, 0.137f);
+    glVertex2f(2181,734);
+    glVertex2f(2215,734);
+    glVertex2f(2215,674);
+    glVertex2f(2182,674);
+
+    glBegin(GL_QUADS);
+    glColor3f(0.247f, 0.165f, 0.137f);
+    glVertex2f(2188,892);
+    glVertex2f(2214,892);
+    glVertex2f(2214,851);
+    glVertex2f(2188,851);
+    glEnd();
+}
+
+void windmillpaka()
+{
+
+
+    glPushMatrix();
+
+
+    glTranslatef(2199.0f, 1024.0f, 0.0f);
+
+
+    glRotatef(bladeAngle, 0.0f, 0.0f, 1.0f);
+
+
+    glTranslatef(-2199.0f, -1024.0f, 0.0f);
+
+    // Blade 1
+    glBegin(GL_QUADS);
+    glColor3f(0.224f, 0.149f, 0.118f);
+    glVertex2f(2411, 809);
+    glVertex2f(2417, 815);
+    glVertex2f(2213, 1018);
+    glVertex2f(2207, 1011);
+    //jora1
+    glVertex2f(2387,781);
+    glVertex2f(2392,786);
+    glVertex2f(2232,944);
+    glVertex2f(2227,940);
+
+    glVertex2f(2227,940);
+    glVertex2f(2229,937);
+    glVertex2f(2282,986);
+    glVertex2f(2278,989);
+
+    glVertex2f(2433,825);
+    glVertex2f(2437,829);
+    glVertex2f(2278,989);
+    glVertex2f(2273,985);
+
+
+    glVertex2f(2398,795);
+    glVertex2f(2400,798);
+    glVertex2f(2244,953);
+    glVertex2f(2241,950);
+
+    glVertex2f(2387,781);
+    glVertex2f(2437,829);
+    glVertex2f(2433,833);
+    glVertex2f(2383,784);
+
+    glVertex2f(2293,965);
+    glVertex2f(2296,963);
+    glVertex2f(2253,921);
+    glVertex2f(2250,924);
+
+    glVertex2f(2313,946);
+    glVertex2f(2316,943);
+    glVertex2f(2271,902);
+    glVertex2f(2269,905);
+
+    glVertex2f(2333,927);
+    glVertex2f(2336,925);
+    glVertex2f(2290,882);
+    glVertex2f(2288,884);
+
+    glVertex2f(2354,907);
+    glVertex2f(2356,905);
+    glVertex2f(2309,863);
+    glVertex2f(2307,865);
+
+    glVertex2f(2372,889);
+    glVertex2f(2375,887);
+    glVertex2f(2330,843);
+    glVertex2f(2327,845);
+
+    glVertex2f(2392,870);
+    glVertex2f(2395,867);
+    glVertex2f(2349,823);
+    glVertex2f(2346,827);
+
+    glVertex2f(2411,850);
+    glVertex2f(2413,847);
+    glVertex2f(2370,805);
+    glVertex2f(2367,807);
+
+
+    // Blade 2
+    glVertex2f(2209, 1038);
+    glVertex2f(2215, 1031);
+    glVertex2f(2416, 1238);
+    glVertex2f(2411, 1243);
+
+    glVertex2f(2395, 1265);
+    glVertex2f(2445, 1216);
+    glVertex2f(2439, 1210);
+    glVertex2f(2390, 1260);
+
+    glVertex2f(2395, 1265);
+    glVertex2f(2400, 1260);
+    glVertex2f(2249, 1105);
+    glVertex2f(2244, 1110);
+
+    glVertex2f(2440, 1220);
+    glVertex2f(2445, 1216);
+    glVertex2f(2294, 1062);
+    glVertex2f(2288, 1066);
+
+    glVertex2f(2250, 1112);
+    glVertex2f(2295, 1069);
+    glVertex2f(2294, 1062);
+    glVertex2f(2244, 1110);
+
+    glVertex2f(2426, 1229);
+    glVertex2f(2429, 1225);
+    glVertex2f(2283, 1076);
+    glVertex2f(2280, 1080);
+
+    glVertex2f(2378, 1242);
+    glVertex2f(2423, 1200);
+    glVertex2f(2420, 1197);
+    glVertex2f(2375, 1238);
+
+    glVertex2f(2359, 1222);
+    glVertex2f(2405, 1182);
+    glVertex2f(2401, 1177);
+    glVertex2f(2355, 1218);
+
+    glVertex2f(2341, 1203);
+    glVertex2f(2385, 1161);
+    glVertex2f(2381, 1158);
+    glVertex2f(2337, 1199);
+
+    glVertex2f(2322, 1184);
+    glVertex2f(2366, 1143);
+    glVertex2f(2362, 1139);
+    glVertex2f(2320, 1180);
+
+    glVertex2f(2303, 1164);
+    glVertex2f(2347, 1123);
+    glVertex2f(2343, 1119);
+    glVertex2f(2300, 1160);
+
+    glVertex2f(2284, 1144);
+    glVertex2f(2328, 1104);
+    glVertex2f(2325, 1101);
+    glVertex2f(2281, 1142);
+
+    glVertex2f(2265, 1125);
+    glVertex2f(2308, 1084);
+    glVertex2f(2305, 1080);
+    glVertex2f(2262, 1122);
+
+
+    // Blade 3
+    glVertex2f(2185, 1034);
+    glVertex2f(2190, 1040);
+    glVertex2f(1987, 1240);
+    glVertex2f(1981, 1235);
+
+    glVertex2f(1960, 1220);
+    glVertex2f(2010, 1267);
+    glVertex2f(2015, 1262);
+    glVertex2f(1964, 1214);
+
+    glVertex2f(2010, 1267);
+    glVertex2f(2171, 1111);
+    glVertex2f(2166, 1105);
+    glVertex2f(2007, 1263);
+
+    glVertex2f(1960, 1220);
+    glVertex2f(1965, 1222);
+    glVertex2f(2124, 1064);
+    glVertex2f(2121, 1061);
+
+    glVertex2f(2116, 1065);
+    glVertex2f(2166, 1115);
+    glVertex2f(2171, 1111);
+    glVertex2f(2121, 1061);
+
+    glVertex2f(2000, 1250);
+    glVertex2f(2002, 1252);
+    glVertex2f(2155, 1100);
+    glVertex2f(2152, 1097);
+
+    glVertex2f(1983, 1201);
+    glVertex2f(2027, 1246);
+    glVertex2f(2031, 1242);
+    glVertex2f(1987, 1199);
+
+    glVertex2f(2003, 1182);
+    glVertex2f(2046, 1226);
+    glVertex2f(2050, 1222);
+    glVertex2f(2007, 1180);
+
+    glVertex2f(2024, 1163);
+    glVertex2f(2067, 1206);
+    glVertex2f(2070, 1202);
+    glVertex2f(2027, 1160);
+
+    glVertex2f(2042, 1144);
+    glVertex2f(2085, 1188);
+    glVertex2f(2088, 1184);
+    glVertex2f(2046, 1141);
+
+    glVertex2f(2062, 1126);
+    glVertex2f(2104, 1169);
+    glVertex2f(2108, 1165);
+    glVertex2f(2065, 1123);
+
+    glVertex2f(2081, 1108);
+    glVertex2f(2123, 1149);
+    glVertex2f(2127, 1145);
+    glVertex2f(2083, 1105);
+
+    glVertex2f(2100, 1087);
+    glVertex2f(2143, 1130);
+    glVertex2f(2146, 1126);
+    glVertex2f(2103, 1084);
+
+
+    // Blade 4
+    glVertex2f(1988, 811);
+    glVertex2f(1993, 806);
+    glVertex2f(2192, 1008);
+    glVertex2f(2186, 1014);
+
+    glVertex2f(1957, 835);
+    glVertex2f(1962, 840);
+    glVertex2f(2014, 792);
+    glVertex2f(2008, 787);
+
+    glVertex2f(1957, 835);
+    glVertex2f(2118, 997);
+    glVertex2f(2122, 993);
+    glVertex2f(1962, 833);
+
+    glVertex2f(2113, 993);
+    glVertex2f(2117, 998);
+    glVertex2f(2168, 949);
+    glVertex2f(2164, 945);
+
+    glVertex2f(2164, 953);
+    glVertex2f(2168, 949);
+    glVertex2f(2008, 787);
+    glVertex2f(2004, 792);
+
+    glVertex2f(1972, 826);
+    glVertex2f(2128, 983);
+    glVertex2f(2132, 979);
+    glVertex2f(1976, 822);
+
+    glVertex2f(1980, 852);
+    glVertex2f(1983, 856);
+    glVertex2f(2029, 814);
+    glVertex2f(2026, 812);
+
+    glVertex2f(1999, 872);
+    glVertex2f(2002, 876);
+    glVertex2f(2047, 834);
+    glVertex2f(2044, 831);
+
+    glVertex2f(2019, 892);
+    glVertex2f(2022, 895);
+    glVertex2f(2067, 853);
+    glVertex2f(2064, 851);
+
+    glVertex2f(2038, 911);
+    glVertex2f(2042, 915);
+    glVertex2f(2086, 873);
+    glVertex2f(2083, 870);
+
+    glVertex2f(2058, 930);
+    glVertex2f(2061, 935);
+    glVertex2f(2107, 892);
+    glVertex2f(2103, 889);
+
+    glVertex2f(2077, 951);
+    glVertex2f(2081, 954);
+    glVertex2f(2126, 911);
+    glVertex2f(2124, 909);
+
+    glVertex2f(2097, 970);
+    glVertex2f(2101, 974);
+    glVertex2f(2146, 931);
+    glVertex2f(2143, 928);
+
+
+
+
+
+    glEnd();
+
+    glPopMatrix();
+}
+
 
 void fullleftfield()
 {
@@ -1519,6 +2111,7 @@ void fullleftfield()
     Fieldleft();
     rightbigField();
 }
+
 
 
 void leftTree1()
@@ -1962,11 +2555,18 @@ void drawHouse() {
 
 void display() {
     glClear(GL_COLOR_BUFFER_BIT);
+
     sky();
     Mountain();
+
     fullleftfield();
+
     leftTree1();
+    windmill();
+    windmillpaka();
     drawHouse();
+    drawCircleAtPosition(2199.0f, 1024.0f, 20.0f, 57, 38, 30);
+    drawCircleAtPosition(2199.0f, 1024.0f, 10.0f, 92, 62, 44);
     //drawTree1();
     //drawTree2();
     //drawWater();
@@ -1982,6 +2582,14 @@ void init() {
     srand(time(NULL));
 }
 
+void spinBlades() {
+    bladeAngle -= 0.1f;
+    if (bladeAngle < -360.0f) {
+        bladeAngle = 0.0f;
+    }
+    glutPostRedisplay();
+}
+
 int main(int argc, char** argv) {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
@@ -1989,6 +2597,7 @@ int main(int argc, char** argv) {
     glutCreateWindow("Scenario");
     init();
     glutDisplayFunc(display);
+    glutIdleFunc(spinBlades);
     //glutTimerFunc(0, update, 0);
     glutMainLoop();
     return 0;
