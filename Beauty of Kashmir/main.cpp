@@ -3795,12 +3795,135 @@ void House1Part3w()
     glVertex2f(762.0505157240923, 566.2819396446259);
     glEnd();
 
+    glBegin(GL_QUADS);
+    glColor3f(0.867f, 0.525f, 0.282f);
+    glVertex2f(570.6648885088779, 258.8173077304816);   // T109
+    /* --- New Points from image_f9a90f.png (B110 to C110) --- */
+    glVertex2f(706.0438484012715, 263.1053290845394);   // C110
+    glVertex2f(706.0438484012715, 244.5239032169554);   // B110
+    glVertex2f(571.6858459741297, 239.8274988767969);   // S109
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.392f, 0.275f, 0.216f);
+    glVertex2f(554.7379520509493, 266.7807759594461);   // U109
+    /* --- New Points from image_f9b473.png (C110 to D110) --- */
+    glVertex2f(690.0343789784204, 271.4010987803574);   // D110
+    glVertex2f(706.0438484012715, 263.1053290845394);   // C110
+    glVertex2f(570.6648885088779, 258.8173077304816);   // T109
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.867f, 0.525f, 0.282f);
+    glVertex2f(554.1253775717981, 283.9328613756775);   // V109
+    glVertex2f(690.8258360356135, 286.8345113956236);   // E110
+    glVertex2f(690.0343789784204, 271.4010987803574);   // D110
+    glVertex2f(554.7379520509493, 266.7807759594461);   // U109
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.392f, 0.275f, 0.216f);
+    glVertex2f(537, 290);   // W109
+    glVertex2f(671.830866666, 293.561896);              // F110
+    glVertex2f(690.8258360356135, 283);   // E110
+    glVertex2f(554.1253775717981, 283);   // V109
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.867f, 0.525f, 0.282f);
+    glVertex2f(536.5649091694665, 307.2106915834200);   // Z109
+    glVertex2f(670.4458168128907,307.2106915834200);    // G110
+    glVertex2f(670.4458168128907, 293.561896);          // F110
+    glVertex2f(536.5649091694665, 290.8753721393902);   // W109
+    glEnd();
+
+
+    glBegin(GL_QUADS);
+    glColor3f(0.792f, 0.549f, 0.345f);
+    /* --- New Points from image_fa8e07.png (L110 to O110) --- */
+    glVertex2f(391.5449973880358, 373.1550788362691);   // L110
+    glVertex2f(512.582403218466, 373.1550788362691);    // M110
+    glVertex2f(512.582403218466, 366.3144411365099);   // N110
+    glVertex2f(391.5449973880358, 366.3144411365099);   // O110
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.804f, 0.569f, 0.282f);
+    /* --- New Points from image_fa9266.png (P110 to G111) --- */
+    glVertex2f(404.7226823905251, 367.2130642609222);   // P110
+    glVertex2f(415.9060201087306, 367.8867593041877);   // Q110
+    glVertex2f(414.9628470481591, 300.2477769603403);   // R110
+    glVertex2f(404.453204373219, 300.1130379516872);    // S110
+
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.804f, 0.569f, 0.282f);
+    /* --- New Points from image_fa9266.png (P110 to G111) --- */
+
+    glVertex2f(433.5568302422839, 367.7520202955346);   // T110
+    glVertex2f(443.3927778739586, 367.7520202955346);   // U110
+    glVertex2f(443.3927778739586, 301.1909500209119);   // V110
+    glVertex2f(433.5568302422839, 301.460428038218);    // W110
+
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.804f, 0.569f, 0.282f);
+    /* --- New Points from image_fa9266.png (P110 to G111) --- */
+    glVertex2f(457.0014177479195, 368.2909763301469);   // Z110
+    glVertex2f(467.1068433969004, 367.8867593041877);   // A111
+    glVertex2f(466.8373653795943, 302.2688620901365);   // B111
+    glVertex2f(458.7530248604095, 303.2120351507081);   // C111
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.804f, 0.569f, 0.282f);
+    /* --- New Points from image_fa9266.png (P110 to G111) --- */
+    glVertex2f(483.679741461229, 369.6383664166777);    // D111
+    glVertex2f(492.7072550409853, 369.2341493907185);   // E111
+    glVertex2f(493.919906118863, 301.1909500209119);    // F111
+    glVertex2f(485.8355655996783, 301.460428038218);    // G111
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.804f, 0.569f, 0.282f);
+    /* --- New Points from image_fa862d.png (H110 to K110) --- */
+    glVertex2f(510.2760293242158, 480.0);   // H110
+    glVertex2f(520.0, 480.0);                           // I110
+    glVertex2f(520.0, 305.3144700593858);   // J110
+    glVertex2f(510.2760293242158, 305.3144700593858);   // K110
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.392f, 0.259f, 0.165f);
+    glVertex2f(344.85495, 597.608565);
+    glVertex2f(568.732291, 826.12214555);
+    glVertex2f(593.6445079, 810.424036);
+    glVertex2f(359.067326, 575.6439887);
+    glEnd();
+
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.392f, 0.275f, 0.216f);
+    /* --- New Points from image_f999c9.png (R109 to Z109) --- */
+    glVertex2f(523.9050366003438, 253.5083289111718);   // R109
+    glVertex2f(571.6858459741297, 239.8274988767969);   // S109
+    glVertex2f(570.6648885088779, 258.8173077304816);   // T109
+    glVertex2f(554.7379520509493, 266.7807759594461);   // U109
+    glVertex2f(554.1253775717981, 283.9328613756775);   // V109
+    glVertex2f(537.1774836486177, 290.8753721393902);   // W109
+    glVertex2f(536.5649091694665, 307.2106915834200);   // Z109
+    glVertex2f(523.29246, 312.519670);
+    glEnd();
+
+
 
 }
 
 
 
-void drawHouse() {
+void drawHouse1() {
     glBegin(GL_QUADS);
     glColor3f(0.561f, 0.427f, 0.349f);
     glVertex2f(93.2612459851965, 593.2605225907151);
@@ -3840,7 +3963,7 @@ void display() {
     leftTree1();
     windmill();
     windmillpaka();
-    drawHouse();
+    drawHouse1();
     drawCircleAtPosition(2199.0f, 1024.0f, 20.0f, 57, 38, 30);
     drawCircleAtPosition(2199.0f, 1024.0f, 10.0f, 92, 62, 44);
     drawCircleAtPosition(792.0f, 1100.0f, 60.0f, 227, 235, 246);
