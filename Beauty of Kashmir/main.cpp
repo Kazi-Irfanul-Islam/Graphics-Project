@@ -3,6 +3,10 @@
 using namespace std;
 float bladeAngle = 0.0f;
 float fireTime = 0.0f;
+float boatX = 2729.56f; // শুরু: J298
+float boatY = 22.11f;
+float boatScale = 1.0f;
+int pathStep = 1;
 const int numStars = 100;
 float starX[numStars];
 float starY[numStars];
@@ -7030,6 +7034,11 @@ void riverflowpart6()
 }
 void boat()
 {
+    glPushMatrix();
+    glTranslatef(boatX, boatY, 0);
+    //glTranslatef(2200, 250, 0);
+    glScalef(boatScale, boatScale, 1.0f);
+    glTranslatef(-2200, -250, 0);
     glBegin(GL_POLYGON);
     glColor3ub(135,61,97);
     /* ========================================================= */
@@ -7766,7 +7775,7 @@ void boat()
     glVertex2f(2321.6200166399694f, 302.2763798464208f); // L299
     glEnd();
 
-
+    glPopMatrix();
 
 
 
@@ -11679,7 +11688,71 @@ void updateFire(int value) {
     glutPostRedisplay();
     glutTimerFunc(30, updateFire, 0);
 }
+void moveBoat(int value) {
+    float speed = 3.5f;
 
+    // Jodi wait shesh hoy, tobe boat reset hobe
+    if (pathStep == 8) {
+        boatX = 2729.56f; // J298 Point
+        boatY = 22.11f;
+        boatScale = 1.0f;
+        pathStep = 1;
+    }
+
+    // Step 1: J298 theke K298
+    if (pathStep == 1) {
+        boatX -= speed;
+        boatY += speed * 0.27f;
+        if (boatX <= 1872.48f) { boatX = 1872.48f; boatY = 256.07f; pathStep = 2; }
+    }
+    // Step 2: K298 theke L298
+    else if (pathStep == 2) {
+        boatX -= speed;
+        boatY += speed * 0.26f;
+        if (boatX <= 1564.63f) { boatX = 1564.63f; boatY = 338.83f; pathStep = 3; }
+    }
+    // Step 3: L298 theke M298
+    else if (pathStep == 3) {
+        boatX -= speed;
+        boatY += speed * 0.40f;
+        if (boatX <= 1465.10f) { boatX = 1465.10f; boatY = 378.62f; pathStep = 4; }
+    }
+    // Step 4: M298 theke N298 (Dane Bak)
+    else if (pathStep == 4) {
+        boatX += speed * 0.8f;
+        boatY += speed;
+        if (boatY >= 438.74f) { boatX = 1517.22f; boatY = 438.74f; pathStep = 5; }
+    }
+    // Step 5: N298 theke O298 (Halka Soja)
+    else if (pathStep == 5) {
+        boatY += speed;
+        if (boatY >= 470.28f) { boatX = 1516.59f; boatY = 470.28f; pathStep = 6; }
+    }
+    // Step 6: O298 theke P298 (Bak Niye Jawa)
+    else if (pathStep == 6) {
+        boatX -= speed * 1.5f;
+        boatY += speed;
+        if (boatY >= 500.0f) { boatX = 1470.0f; boatY = 500.0f; pathStep = 7; }
+    }
+    // Step 7: P298 theke Q298 (Ses Point)
+    else if (pathStep == 7) {
+        boatX -= speed;
+        boatY += speed * 0.5f;
+        if (boatY >= 517.39f) {
+            boatX = 5000.0f; // Boat hide kore dewa
+            pathStep = 8;    // Waiting Stage
+            glutTimerFunc(15000, moveBoat, 0); // 120,000 ms = 2 minute wait
+            return; // Loop bondho hobe wait korar jonno
+        }
+    }
+
+    // Shrinking logic
+    boatScale = 1.0f - ((boatY - 22.0f) / 500.0f);
+    if (boatScale < 0.12f) boatScale = 0.12f;
+
+    glutPostRedisplay();
+    glutTimerFunc(30, moveBoat, 0); // Animation loop chalu thakbe
+}
 int main(int argc, char** argv) {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
@@ -11690,6 +11763,7 @@ int main(int argc, char** argv) {
     glutIdleFunc(spinBlades);
     //glutTimerFunc(0, update, 0);
     glutTimerFunc(0, updateFire, 0);
+    glutTimerFunc(0, moveBoat, 0);
     glutMainLoop();
     return 0;
 }
