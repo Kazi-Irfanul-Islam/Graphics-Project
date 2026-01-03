@@ -12,6 +12,7 @@ const int numStars = 100;
 float starX[numStars];
 float starY[numStars];
 bool starsInitialized = false;
+bool isDay = false; // শুরুতে Night mode থাকবে
 
 
 void initStars() {
@@ -42,31 +43,27 @@ void traingles(float r, float g, float b, int x1, int y1, int x2, int y2, int x3
 }
 
 void sky() {
-    // Initialize stars only once
-    if (!starsInitialized) {
-        initStars();
-    }
-
-    glBegin(GL_QUADS);
-        glColor3f(0.0f, 0.2f, 0.4f);
+   glBegin(GL_QUADS);
+        /* উপরের অংশ (Light Cyan/Pale Mint) */
+        isDay ? glColor3ub(100, 200, 255) : glColor3f(0.0f, 0.2f, 0.4f);
         glVertex2f(0.0f, 2816.0f);
-        glVertex2f(2816.0f, 2816.0f); // Fixed: Quad needs 4 corners
+        glVertex2f(2816.0f, 2816.0f);
 
-        glColor3f(0.4f, 0.6f, 0.8f);
+        /* নিচের অংশ: Light Sky Blue (IsDay) vs Pale Navy (Night) */
+        isDay ? glColor3ub(180, 230, 255) : glColor3f(0.4f, 0.6f, 0.8f);
         glVertex2f(2816.0f, 0.0f);
         glVertex2f(0.0f, 0.0f);
     glEnd();
-
-    /* --- Drawing Static Stars --- */
-    glColor3ub(255, 255, 255);
-    glPointSize(2.0f);
-    glBegin(GL_POINTS);
-        for(int i = 0; i < numStars; i++) {
-            glVertex2f(starX[i], starY[i]);
-        }
-    glEnd();
+    /* তারাগুলো শুধু রাতেই দেখাবে */
+    if (!isDay) {
+        if (!starsInitialized) initStars();
+        glColor3ub(255, 255, 255);
+        glPointSize(2.0f);
+        glBegin(GL_POINTS);
+            for(int i = 0; i < numStars; i++) glVertex2f(starX[i], starY[i]);
+        glEnd();
+    }
 }
-
 void firstMountain_part1() {
     glBegin(GL_POLYGON);
     glColor3f(0.184f, 0.266f, 0.419f);
@@ -2544,33 +2541,36 @@ void Fieldleft()
 void leftbigfield()
 {
     glBegin(GL_POLYGON);
-    glColor3f(0.22745f, 0.34509f, 0.1843137f);
-    glVertex2f(1457.0409162534306, 308.8559336902048); // K35
-    glVertex2f(1476.4069510964057, 304.3567538782005); // L35
-    glVertex2f(1496.9466850207732, 297.3145593898458); // M35
-    glVertex2f(1513.3784721602672, 291.2504474693183); // N35
-    glVertex2f(1539.9823180051624, 283.2301704131366); // O35
-    glVertex2f(1577.1494555825893, 269.9282474906889); // P35
-    glVertex2f(1618.8157729720206, 255.8438585139796); // Q35
-    glVertex2f(1655.3960610087513, 242.1507025644012); // R35
-    glVertex2f(1707.430053617149, 225.9145319384724);  // S35
-    glVertex2f(1755.4803686396076, 209.5243369590561); // T35
-    glVertex2f(1800, 200);                             // U35
-    glVertex2f(1840.8503942224281, 180.0513519364153); // V35
-    glVertex2f(1900, 160);                             // W35
-    glVertex2f(1937.3612852430147, 144.1684044328366); // Z35
-    glVertex2f(1980.2595571825093, 133.6088298015762); // A36
-    glVertex2f(2021.9545053959423, 110.8203426293575); // B36
-    glVertex2f(2063.7003247773046, 94.6786258018972);  // C36
-    glVertex2f(2112.6820861847696, 74.0840215737583);  // D36
-    glVertex2f(2177.24895349461, 51.8195845703648);    // E36
-    glVertex2f(2239.589377104111, 23.9890383161229);   // F36
-    glVertex2f(2282.670057035116, 5.0477856412101);    // G36
-    glVertex2f(2301.1845135331137, 0);  // H36
-    glVertex2f(0,0);
-    glVertex2f(2.0186163246173, 630.2745667320143);
-    glVertex2f(42.4132535438051, 637.8347522466834);
+        /* isDay সত্য হলে উজ্জ্বল সবুজ (116, 165, 48)
+           মিথ্যা হলে আগের অন্ধকার সবুজ ঘরানার কালার (0.22745f, 0.34509f, 0.1843137f)
+        */
+        isDay ? glColor3ub(116, 165, 48) : glColor3f(0.22745f, 0.34509f, 0.1843137f);
 
+        glVertex2f(1457.0409162534306, 308.8559336902048); // K35
+        glVertex2f(1476.4069510964057, 304.3567538782005); // L35
+        glVertex2f(1496.9466850207732, 297.3145593898458); // M35
+        glVertex2f(1513.3784721602672, 291.2504474693183); // N35
+        glVertex2f(1539.9823180051624, 283.2301704131366); // O35
+        glVertex2f(1577.1494555825893, 269.9282474906889); // P35
+        glVertex2f(1618.8157729720206, 255.8438585139796); // Q35
+        glVertex2f(1655.3960610087513, 242.1507025644012); // R35
+        glVertex2f(1707.430053617149, 225.9145319384724);  // S35
+        glVertex2f(1755.4803686396076, 209.5243369590561); // T35
+        glVertex2f(1800, 200);                             // U35
+        glVertex2f(1840.8503942224281, 180.0513519364153); // V35
+        glVertex2f(1900, 160);                             // W35
+        glVertex2f(1937.3612852430147, 144.1684044328366); // Z35
+        glVertex2f(1980.2595571825093, 133.6088298015762); // A36
+        glVertex2f(2021.9545053959423, 110.8203426293575); // B36
+        glVertex2f(2063.7003247773046, 94.6786258018972);  // C36
+        glVertex2f(2112.6820861847696, 74.0840215737583);  // D36
+        glVertex2f(2177.24895349461, 51.8195845703648);    // E36
+        glVertex2f(2239.589377104111, 23.9890383161229);   // F36
+        glVertex2f(2282.670057035116, 5.0477856412101);    // G36
+        glVertex2f(2301.1845135331137, 0);                 // H36
+        glVertex2f(0, 0);
+        glVertex2f(2.0186163246173, 630.2745667320143);
+        glVertex2f(42.4132535438051, 637.8347522466834);
     glEnd();
 
 
@@ -5020,209 +5020,168 @@ void House1Part3w()
     glVertex2f(566.9463248809601, 730.454841671766);
     glEnd();
 
+    /* --- Window/Polygon Part 1 --- */
     glBegin(GL_QUADS);
-    glColor3f(0.969f, 0.737f, 0.369f);
-    glVertex2f(499.2218882520957, 687.8151670665746);
-    glVertex2f(532.6789209080306, 687.8151670665746);
-    glVertex2f(532.6789209080306, 610.061023174183);
-    glVertex2f(499.2218882520957, 610.061023174183);
+        isDay ? glColor3ub(101, 57, 28) : glColor3f(0.969f, 0.737f, 0.369f);
+        glVertex2f(499.2218882520957, 687.8151670665746);
+        glVertex2f(532.6789209080306, 687.8151670665746);
+        glVertex2f(532.6789209080306, 610.061023174183);
+        glVertex2f(499.2218882520957, 610.061023174183);
     glEnd();
 
     glBegin(GL_POLYGON);
-    glColor3f(0.969f, 0.737f, 0.369f);
-    glVertex2f(565.8330889936555, 719.356942811371);
-    glVertex2f(594.8690334132834, 692.0530181115865);
-    glVertex2f(594.8690334132834, 610.3695713208832);
-    glVertex2f(541.6856047447664,  610.3695713208832);
-    glVertex2f(541.6856047447664, 692.0530181115865);
-    glEnd();
-
-
-    glBegin(GL_QUADS);
-    glColor3f(0.969f, 0.737f, 0.369f);
-    glVertex2f(600, 687.7154117266202);
-    glVertex2f(632.342754661932, 687.7154117266202);
-    glVertex2f(632.342754661932, 610);
-    glVertex2f(600, 610);
-    glEnd();
-
-
-    glBegin(GL_QUADS);
-    glColor3f(0.392f, 0.471f, 0.627f);
-    glVertex2f(345.3717669844729, 575.6439887417325);
-    glVertex2f(762.5262840175703, 569.7118403677534);
-    glVertex2f(823.7734399612941, 492.0876026334698);
-    glVertex2f(401.0136849119668, 492.0876026334698);
-    glEnd();
-
-
-
-    glBegin(GL_QUADS);
-    glColor3f(0.498f, 0.345f, 0.255f);
-    glVertex2f(345.3717669844729, 575.6439887417325);
-    glVertex2f(401.0136849119668, 492.0876026334698);
-    glVertex2f(403.4129249742493, 476.5655722205738);
-    glVertex2f(343.927439475018, 554.0350417079444);
+        isDay ? glColor3ub(101, 57, 28) : glColor3f(0.969f, 0.737f, 0.369f);
+        glVertex2f(565.8330889936555, 719.356942811371);
+        glVertex2f(594.8690334132834, 692.0530181115865);
+        glVertex2f(594.8690334132834, 610.3695713208832);
+        glVertex2f(541.6856047447664, 610.3695713208832);
+        glVertex2f(541.6856047447664, 692.0530181115865);
     glEnd();
 
     glBegin(GL_QUADS);
-    glColor3f(0.686f, 0.475f, 0.314f);
-    glVertex2f(403.4129249742493, 492.0876026334698);
-    glVertex2f(824.5340138955771, 492.0876026334698);
-    glVertex2f(824.5340138955771, 476.5655722205738);
-    glVertex2f(403.4129249742493, 476.5655722205738);
+        isDay ? glColor3ub(101, 57, 28) : glColor3f(0.969f, 0.737f, 0.369f);
+        glVertex2f(600, 687.7154117266202);
+        glVertex2f(632.342754661932, 687.7154117266202);
+        glVertex2f(632.342754661932, 610);
+        glVertex2f(600, 610);
+    glEnd();
+
+    /* --- Wall / Roof Shadows --- */
+    glBegin(GL_QUADS);
+        isDay ? glColor3f(0.5f, 0.6f, 0.8f) : glColor3f(0.392f, 0.471f, 0.627f);
+        glVertex2f(345.3717669844729, 575.6439887417325);
+        glVertex2f(762.5262840175703, 569.7118403677534);
+        glVertex2f(823.7734399612941, 492.0876026334698);
+        glVertex2f(401.0136849119668, 492.0876026334698);
     glEnd();
 
     glBegin(GL_QUADS);
-    glColor3f(0.561f, 0.427f, 0.349f);
-    glVertex2f(375.0936818855813, 516.5417533537812);
-    glVertex2f(394.9499864308949, 487.8560643762628);
-    glVertex2f(394.9499864308949, 303.60543521764);
-    glVertex2f(383.2928700883018, 303.60543521764);
-    glEnd();
-
-
-    glBegin(GL_QUADS);
-    glColor3f(0.263f, 0.169f, 0.125f);
-    glVertex2f(371.8364590308588, 516.5417533537812);
-    glVertex2f(383.2928700883018, 502.5910914944035);
-    glVertex2f(383.2928700883018, 303.60543521764);
-    glVertex2f(371.8364590308588, 303.60543521764);
+        isDay ? glColor3f(0.6f, 0.45f, 0.35f) : glColor3f(0.498f, 0.345f, 0.255f);
+        glVertex2f(345.3717669844729, 575.6439887417325);
+        glVertex2f(401.0136849119668, 492.0876026334698);
+        glVertex2f(403.4129249742493, 476.5655722205738);
+        glVertex2f(343.927439475018, 554.0350417079444);
     glEnd();
 
     glBegin(GL_QUADS);
-    glColor3f(0.263f, 0.169f, 0.125f);
-    glVertex2f(343.7284308244594, 308.3125215859138);
-    glVertex2f(394.0316446637398, 303.60543521764);
-    glVertex2f(801.422861102017, 312.77235190726);
-    glVertex2f(760, 320);
+        isDay ? glColor3f(0.8f, 0.6f, 0.4f) : glColor3f(0.686f, 0.475f, 0.314f);
+        glVertex2f(403.4129249742493, 492.0876026334698);
+        glVertex2f(824.5340138955771, 492.0876026334698);
+        glVertex2f(824.5340138955771, 476.5655722205738);
+        glVertex2f(403.4129249742493, 476.5655722205738);
+    glEnd();
+
+    /* --- Lower House Walls --- */
+    glBegin(GL_QUADS);
+        isDay ? glColor3f(0.7f, 0.55f, 0.45f) : glColor3f(0.561f, 0.427f, 0.349f);
+        glVertex2f(375.0936818855813, 516.5417533537812);
+        glVertex2f(394.9499864308949, 487.8560643762628);
+        glVertex2f(394.9499864308949, 303.60543521764);
+        glVertex2f(383.2928700883018, 303.60543521764);
+    glEnd();
+
+    glBegin(GL_QUADS);
+        isDay ? glColor3f(0.4f, 0.25f, 0.2f) : glColor3f(0.263f, 0.169f, 0.125f);
+        glVertex2f(371.8364590308588, 516.5417533537812);
+        glVertex2f(383.2928700883018, 502.5910914944035);
+        glVertex2f(383.2928700883018, 303.60543521764);
+        glVertex2f(371.8364590308588, 303.60543521764);
+    glEnd();
+
+    glBegin(GL_QUADS);
+        isDay ? glColor3f(0.4f, 0.25f, 0.2f) : glColor3f(0.263f, 0.169f, 0.125f);
+        glVertex2f(343.7284308244594, 308.3125215859138);
+        glVertex2f(394.0316446637398, 303.60543521764);
+        glVertex2f(801.422861102017, 312.77235190726);
+        glVertex2f(760, 320);
+    glEnd();
+
+    glBegin(GL_QUADS);
+        isDay ? glColor3f(0.8f, 0.6f, 0.45f) : glColor3f(0.647f, 0.451f, 0.294f);
+        glVertex2f(381.5357639743289, 303.9431617227592);
+        glVertex2f(802.6111419304154, 312.77235190726);
+        glVertex2f(802.6111419304154, 263.9340098600853);
+        glVertex2f(381.5357639743289, 250.0715142826265);
+    glEnd();
+
+    glBegin(GL_QUADS);
+        isDay ? glColor3f(0.5f, 0.35f, 0.3f) : glColor3f(0.322f, 0.224f, 0.188f);
+        glVertex2f(93.2612459851965, 330.8763394598969);
+        glVertex2f(381.5357639743289, 303.9431617227592);
+        glVertex2f(381.5357639743289, 250.0715142826265);
+        glVertex2f(93.2612459851965, 288.3121573932507);
     glEnd();
 
 
-
+    /* --- Window Left 1 --- */
     glBegin(GL_QUADS);
-    glColor3f(0.647f, 0.451f, 0.294f);
-    glVertex2f(381.5357639743289, 303.9431617227592);
-    glVertex2f(802.6111419304154, 312.77235190726);
-    glVertex2f(802.6111419304154, 263.9340098600853);
-    glVertex2f(381.5357639743289, 250.0715142826265);
+        glColor3f(0.686f, 0.475f, 0.314f);
+        glVertex2f(135, 477); glVertex2f(182, 477);
+        glVertex2f(182, 392); glVertex2f(135, 392);
     glEnd();
 
     glBegin(GL_QUADS);
-    glColor3f(0.322f, 0.224f, 0.188f);
-    glVertex2f(93.2612459851965, 330.8763394598969);
-    glVertex2f(381.5357639743289, 303.9431617227592);
-
-    glVertex2f(381.5357639743289, 250.0715142826265);
-    glVertex2f(93.2612459851965, 288.3121573932507);
+        // Ternary logic for window inner color
+        isDay ? glColor3ub(101, 57, 28) : glColor3f(0.969f, 0.737f, 0.369f);
+        glVertex2f(140, 470); glVertex2f(175, 470);
+        glVertex2f(175, 399); glVertex2f(140, 399);
     glEnd();
 
 
-    //window left1
-
+    /* --- Window Left 2 --- */
+    glBegin(GL_QUADS);
+        glColor3f(0.686f, 0.475f, 0.314f);
+        glVertex2f(243, 481); glVertex2f(296, 481);
+        glVertex2f(296, 390); glVertex2f(243, 390);
+    glEnd();
 
     glBegin(GL_QUADS);
-    glColor3f(0.686f, 0.475f, 0.314f);
-    glVertex2f(135,477);
-    glVertex2f(182,477);
-
-    glVertex2f(182, 392);
-    glVertex2f(135, 392);
+        isDay ? glColor3ub(101, 57, 28) : glColor3f(0.969f, 0.737f, 0.369f);
+        glVertex2f(248, 472); glVertex2f(290, 472);
+        glVertex2f(290, 395); glVertex2f(248, 395);
     glEnd();
 
 
+    /* --- Shamner Window 1 --- */
     glBegin(GL_QUADS);
-    glColor3f(0.969f, 0.737f, 0.369f);
-    glVertex2f(140, 470);
-    glVertex2f(175,470);
+        glColor3f(0.686f, 0.475f, 0.314f);
+        glVertex2f(418, 472); glVertex2f(476, 472);
+        glVertex2f(476, 386); glVertex2f(418, 386);
+    glEnd();
 
-    glVertex2f(175,  399);
-    glVertex2f(140, 399);
+    glBegin(GL_QUADS);
+        isDay ? glColor3ub(101, 57, 28) : glColor3f(0.969f, 0.737f, 0.369f);
+        glVertex2f(426, 466); glVertex2f(470, 466);
+        glVertex2f(470, 395); glVertex2f(426, 395);
     glEnd();
 
 
-    //left window2
+    /* --- Shamner Window 2 --- */
+    glBegin(GL_QUADS);
+        glColor3f(0.686f, 0.475f, 0.314f);
+        glVertex2f(673, 470); glVertex2f(730, 470);
+        glVertex2f(730, 386); glVertex2f(673, 386);
+    glEnd();
 
     glBegin(GL_QUADS);
-    glColor3f(0.686f, 0.475f, 0.314f);
-    glVertex2f(243,481);
-    glVertex2f(296,481);
-
-    glVertex2f(296,390);
-    glVertex2f(243,390);
+        isDay ? glColor3ub(101, 57, 28) : glColor3f(0.969f, 0.737f, 0.369f);
+        glVertex2f(682, 464); glVertex2f(722, 464);
+        glVertex2f(722, 396); glVertex2f(682, 396);
     glEnd();
 
 
+    /* --- Shamner Door (Optional: added ternary for consistency) --- */
     glBegin(GL_QUADS);
-    glColor3f(0.969f, 0.737f, 0.369f);
-    glVertex2f(248, 472);
-    glVertex2f(290,472);
-
-    glVertex2f(290,395);
-    glVertex2f(248,395);
+        glColor3f(0.322f, 0.224f, 0.188f);
+        glVertex2f(527, 470); glVertex2f(610, 470);
+        glVertex2f(610, 318); glVertex2f(527, 318);
     glEnd();
 
-    //shamner window1
     glBegin(GL_QUADS);
-    glColor3f(0.686f, 0.475f, 0.314f);
-    glVertex2f(418,472);
-    glVertex2f(476,472);
-
-    glVertex2f(476,386);
-    glVertex2f(418,386);
-    glEnd();
-
-
-    glBegin(GL_QUADS);
-    glColor3f(0.969f, 0.737f, 0.369f);
-    glVertex2f(426, 466);
-    glVertex2f(470,466);
-
-    glVertex2f(470,395);
-    glVertex2f(426,395);
-    glEnd();
-
-
-
-    //shamner window2
-    glBegin(GL_QUADS);
-    glColor3f(0.686f, 0.475f, 0.314f);
-    glVertex2f(673,470);
-    glVertex2f(730,470);
-
-    glVertex2f(730,386);
-    glVertex2f(673,386);
-    glEnd();
-
-
-    glBegin(GL_QUADS);
-    glColor3f(0.969f, 0.737f, 0.369f);
-    glVertex2f(682, 464);
-    glVertex2f(722,464);
-
-    glVertex2f(722,396);
-    glVertex2f(682,396);
-    glEnd();
-
-
-    //shamner dorja
-    glBegin(GL_QUADS);
-    glColor3f(0.322f, 0.224f, 0.188f);
-    glVertex2f(527,470);
-    glVertex2f(610,470);
-
-    glVertex2f(610,318);
-    glVertex2f(527,318);
-    glEnd();
-
-
-    glBegin(GL_QUADS);
-    glColor3f(0.647f, 0.451f, 0.294f);
-    glVertex2f(535,464);
-    glVertex2f(602,464);
-
-    glVertex2f(602,316);
-    glVertex2f(535,316);
+        // Dorjar khetreo din-raat onujayi ektu change korte paren chaile
+        glColor3f(0.647f, 0.451f, 0.294f);
+        glVertex2f(535, 464); glVertex2f(602, 464);
+        glVertex2f(602, 316); glVertex2f(535, 316);
     glEnd();
 
 
@@ -11775,6 +11734,12 @@ void movePlane(int value) {
     glutPostRedisplay(); // স্ক্রিন রিফ্রেশ করবে
     glutTimerFunc(16, movePlane, 0); // ১৬ মিলি-সেকেন্ড পর পর ফাংশনটি কল হবে (৬০ FPS)
 }
+
+void keyboard(unsigned char key, int x, int y) {
+    if (key == 'd' || key == 'D') isDay = true;
+    else if (key == 'n' || key == 'N') isDay = false;
+    glutPostRedisplay();
+}
 int main(int argc, char** argv) {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
@@ -11787,6 +11752,7 @@ int main(int argc, char** argv) {
     glutTimerFunc(0, updateFire, 0);
     glutTimerFunc(0, moveBoat, 0);
     glutTimerFunc(0, movePlane, 0);
+    glutKeyboardFunc(keyboard);
     glutMainLoop();
     return 0;
 }
