@@ -11,8 +11,12 @@ float planeX = 0.0f; // প্লেনের এক্স-অক্ষ বর�
 const int numStars = 100;
 float starX[numStars];
 float starY[numStars];
+float cloudX = 0.0f; // মেঘের মুভমেন্টের জন্য
 bool starsInitialized = false;
 bool isDay = false; // শুরুতে Night mode থাকবে
+
+// একটি মেঘের ইউনিট আঁকার ফাংশন
+
 
 
 void initStars() {
@@ -2787,14 +2791,16 @@ void windmill()
     glEnd();
 
     glBegin(GL_QUADS);
-    glColor3f(0.247f, 0.165f, 0.137f);
+    isDay ? glColor3ub(92,47,23) : glColor3f(0.976f, 0.698f, 0.314f);
+
     glVertex2f(2181,734);
     glVertex2f(2215,734);
     glVertex2f(2215,674);
     glVertex2f(2182,674);
 
+
     glBegin(GL_QUADS);
-    glColor3f(0.247f, 0.165f, 0.137f);
+    isDay ? glColor3ub(92,47,23) : glColor3f(0.976f, 0.698f, 0.314f);
     glVertex2f(2188,892);
     glVertex2f(2214,892);
     glVertex2f(2214,851);
@@ -5496,7 +5502,7 @@ void drawHouse3() {
 
 
     glBegin(GL_QUADS);
-    glColor3f(0.976f, 0.698f, 0.314f);
+    isDay ? glColor3ub(92,47,23) : glColor3f(0.976f, 0.698f, 0.314f);
     glVertex2f(1130.0f, 484.7480187523994f); // B112
     glVertex2f(1150.0f, 484.7480187523994f); // C112
     glVertex2f(1150.0f, 460.0f);                         // D112
@@ -5504,12 +5510,13 @@ void drawHouse3() {
     glEnd();
 
     glBegin(GL_QUADS);
-    glColor3f(0.976f, 0.698f, 0.314f);
+    isDay ? glColor3ub(92,47,23) : glColor3f(0.976f, 0.698f, 0.314f);
     glVertex2f(1218.3141641512639f, 483.2494798093818f); // F112
     glVertex2f(1240.0f, 483.2494798093818f);  // G112
     glVertex2f(1240.0f, 460.0f);                         // H112
     glVertex2f(1218.3141641512639f, 460.0f); // I112
     glEnd();
+
 
     glBegin(GL_QUADS);
     glColor3f(0.235f, 0.157f, 0.118f);
@@ -8479,7 +8486,12 @@ void fullleftfield()
 
     FieldLeftShadow1();
     fireBase();
-    firewood();
+    if(!isDay)
+    {
+
+        firewood();
+    }
+
 
 
 
@@ -8506,11 +8518,10 @@ void drawhouse4() {
     glVertex2f(2567.1826607701437f, 587.9411272710909f); // D173
     glEnd();
 
+
     glBegin(GL_POLYGON);
     glColor3ub(71,43,30);
-    /* --------------------------------------------------------- */
-    /* --- New Points from image_bf5aa9.png (E173 to I173) ---   */
-    /* --------------------------------------------------------- */
+
 
     glVertex2f(2448.3087872466976f, 724.3456323601316f); // E173
     glVertex2f(2304.317207945995f, 561.106754943575f);   // F173
@@ -8518,6 +8529,7 @@ void drawhouse4() {
     glVertex2f(2337.001299086129f, 569.4593560127201f);  // H173
     glVertex2f(2458.1140145887375f, 712.9062004610848f); // I173
     glEnd();
+
 
     glBegin(GL_QUADS);
     glColor3ub(97,65,44);
@@ -8540,9 +8552,7 @@ void drawhouse4() {
 
     glBegin(GL_POLYGON);
     glColor3ub(104,72,51);
-    /* --------------------------------------------------------- */
-    /* --- New Points from image_bfbcbe.png (N173 to O174) ---   */
-    /* --------------------------------------------------------- */
+
 
     glVertex2f(2447.3078288935840f, 731.2635032325838f); // N173
     glVertex2f(2624.0588941706210f, 716.9675799696730f); // O173
@@ -8697,6 +8707,7 @@ void drawhouse4() {
     glVertex2f(2482.0320574064312f, 433.8446569114205f); // Z178
     glEnd();
 
+
     glBegin(GL_QUADS);
     glColor3ub(56,36,27);
     glVertex2f(2427.3518383740698f, 434.3914591017442f); // A179
@@ -8704,7 +8715,6 @@ void drawhouse4() {
     glVertex2f(2472.3718853773807f, 537.7370730729053f); // C179
     glVertex2f(2472.3718853773807f, 434.3914591017442f); // D179
     glEnd();
-
 
 
     glBegin(GL_QUADS);
@@ -8768,7 +8778,7 @@ void drawhouse4() {
 
 
     glBegin(GL_QUADS);
-    glColor3ub(52,34,25);
+    isDay ? glColor3ub(92,47,23) : glColor3f(0.976f, 0.698f, 0.314f);
     glVertex2f(2636.959344664789f, 531.1754467890221f);  // E179
     glVertex2f(2678.880845922933f, 531.1754467890221f);  // F179
     glVertex2f(2678.880845922933f, 495.0865022276642f);  // G179
@@ -8791,9 +8801,6 @@ void drawhouse4() {
 
     glBegin(GL_QUADS);
     glColor3ub(136,101,73);
-    /* --------------------------------------------------------- */
-    /* --- New Points from image_bf3ca4.png (P172 to S172) ---   */
-    /* --------------------------------------------------------- */
     glVertex2f(2466.3916211125224f, 760.9555324907024f); // P172
     glVertex2f(2473.2922953659186f, 754.1140435271004f); // Q172
     glVertex2f(2299.9549797821287f, 555.179232097823f);  // R172
@@ -8807,6 +8814,7 @@ void drawhouse4() {
     glVertex2f(2600.0f, 560.0f);                         // V172
     glVertex2f(2591.495928014458f, 552.0755496469945f);  // W172
     glEnd();
+
 
 }
 void rt()
@@ -11067,7 +11075,7 @@ void planepart5() {
 
 void planeWindow() {
     glBegin(GL_POLYGON);
-    glColor3ub(251,225,147);
+    isDay ? glColor3ub(255,255,255) : glColor3ub(251,225,147);
     glVertex2f(1476.343151625778f, 1359.9033045653032f); // E218
     glVertex2f(1492.2716671622866f, 1359.7707510379537f); // F218
     glVertex2f(1492.7787240538246f, 1347.8437204857446f); // G218
@@ -11078,7 +11086,7 @@ void planeWindow() {
 
 
     glBegin(GL_QUADS);
-    glColor3ub(112,124,159);
+    isDay ? glColor3ub(255,255,255) : glColor3ub(251,225,147);
     glVertex2f(1510.1697510270526f, 1355.8223652491276f); // K218
     glVertex2f(1525.0000000000000f, 1355.0000000000000f); // L218
     glVertex2f(1525.7118255320010f, 1326.5713840013620f); // M218
@@ -11087,7 +11095,7 @@ void planeWindow() {
 
 
     glBegin(GL_QUADS);
-    glColor3ub(251,225,147);
+    isDay ? glColor3ub(255,255,255) : glColor3ub(251,225,147);
     glVertex2f(1537.8598948504523f, 1348.1102591160834f); // O218
     glVertex2f(1547.4768787337146f, 1348.1102591160834f); // P218
     glVertex2f(1547.4768787337146f, 1335.6320238295400f); // Q218
@@ -11096,7 +11104,7 @@ void planeWindow() {
 
 
     glBegin(GL_QUADS);
-    glColor3ub(251,225,147);
+    isDay ? glColor3ub(255,255,255) : glColor3ub(251,225,147);
     glVertex2f(1555.7756815567640f, 1344.4802884990966f); // S218
     glVertex2f(1566.5679944020487f, 1344.4802884990966f); // T218
     glVertex2f(1566.5679944020487f, 1333.6879756538150f); // U218
@@ -11104,7 +11112,7 @@ void planeWindow() {
     glEnd();
 
     glBegin(GL_QUADS);
-    glColor3ub(251,225,147);
+    isDay ? glColor3ub(255,255,255) : glColor3ub(251,225,147);
     glVertex2f(1575.0f, 1340.0f); // W218
     glVertex2f(1585.0f, 1340.0f);                        // Z218
     glVertex2f(1585.0f, 1330.0f);                        // A219
@@ -11112,7 +11120,7 @@ void planeWindow() {
     glEnd();
 
     glBegin(GL_QUADS);
-    glColor3ub(251,225,147);
+    isDay ? glColor3ub(255,255,255) : glColor3ub(251,225,147);
     glVertex2f(1596.0768746547160f, 1338.5787470951045f); // C219
     glVertex2f(1604.7153917331257f, 1338.5787470951045f); // D219
     glVertex2f(1604.7153917331257f, 1329.0905398122640f); // E219
@@ -11120,7 +11128,7 @@ void planeWindow() {
     glEnd();
 
     glBegin(GL_QUADS);
-    glColor3ub(251,225,147);
+    isDay ? glColor3ub(255,255,255) : glColor3ub(251,225,147);
     glVertex2f(1612.9290637093181f, 1337.7290568906710f); // G219
     glVertex2f(1620.8595056173663f, 1337.7290568906710f); // H219
     glVertex2f(1620.8595056173663f, 1327.9576195396862f); // I219
@@ -11128,7 +11136,7 @@ void planeWindow() {
     glEnd();
 
     glBegin(GL_QUADS);
-    glColor3ub(251,225,147);
+   isDay ? glColor3ub(255,255,255) : glColor3ub(251,225,147);
     glVertex2f(1654.9887288287875f, 1331.2147653233478f); // K219
     glVertex2f(1664.4769361116310f, 1331.2147653233478f); // L219
     glVertex2f(1664.4769361116310f, 1320.3104076997850f); // M219
@@ -11136,7 +11144,7 @@ void planeWindow() {
     glEnd();
 
     glBegin(GL_QUADS);
-    glColor3ub(251,225,147);
+    isDay ? glColor3ub(255,255,255) : glColor3ub(251,225,147);
     glVertex2f(1674.2483734626187f, 1328.6656947100473f); // O219
     glVertex2f(1683.3117356432451f, 1328.6656947100473f); // P219
     glVertex2f(1683.3117356432451f, 1317.4781070183400f); // Q219
@@ -11144,7 +11152,7 @@ void planeWindow() {
     glEnd();
 
     glBegin(GL_QUADS);
-    glColor3ub(251,225,147);
+    isDay ? glColor3ub(255,255,255) : glColor3ub(251,225,147);
     glVertex2f(1694.6409383690282f, 1325.4085489263857f); // S219
     glVertex2f(1701.5800750385702f, 1325.4085489263857f); // T219
     glVertex2f(1701.5800750385702f, 1314.2209612346785f); // U219
@@ -11152,7 +11160,7 @@ void planeWindow() {
     glEnd();
 
     glBegin(GL_QUADS);
-    glColor3ub(251,225,147);
+    isDay ? glColor3ub(255,255,255) : glColor3ub(251,225,147);
     glVertex2f(1712.0595875599195f, 1322.4346332108687f); // W219
     glVertex2f(1721.2645647746180f, 1322.4346332108687f); // Z219
     glVertex2f(1721.2645647746180f, 1311.2470455191612f); // A220
@@ -11160,7 +11168,7 @@ void planeWindow() {
     glEnd();
 
     glBegin(GL_QUADS);
-    glColor3ub(251,225,147);
+    isDay ? glColor3ub(255,255,255) : glColor3ub(251,225,147);
     glVertex2f(1730.0f, 1320.0f);                        // C220
     glVertex2f(1741.5155146469554f, 1320.0f); // D220
     glVertex2f(1741.5155146469554f, 1310.0f); // E220
@@ -11168,7 +11176,7 @@ void planeWindow() {
     glEnd();
 
     glBegin(GL_QUADS);
-    glColor3ub(106,102,100);
+    isDay ? glColor3ub(255,255,255) : glColor3ub(251,225,147);
     glVertex2f(1633.645502198651f, 1333.656491740823f);  // G220
     glVertex2f(1643.2584723265118f, 1333.656491740823f); // H220
     glVertex2f(1643.2584723265118f, 1324.6089904440153f); // I220
@@ -11176,7 +11184,7 @@ void planeWindow() {
     glEnd();
 
     glBegin(GL_QUADS);
-    glColor3ub(111,122,160);
+    isDay ? glColor3ub(255,255,255) : glColor3ub(251,225,147);
     glVertex2f(1750.0f, 1322.7240943405138f); // K220
     glVertex2f(1764.2688021713495f, 1322.7240943405138f); // L220
     glVertex2f(1764.2688021713495f, 1300.0f); // M220
@@ -11560,12 +11568,69 @@ void bakiGrass() {
 
 }
 
+// টাইপ ১: গোলগাল মেঘ
+void drawCloudType1(float x, float y, float s) {
+    drawCircleAtPosition(x, y, s, 255, 255, 255);
+    drawCircleAtPosition(x + s*0.8f, y + s*0.3f, s*1.2f, 255, 255, 255);
+    drawCircleAtPosition(x + s*1.5f, y, s*0.8f, 255, 255, 255);
+}
 
+// টাইপ ২: লম্বাটে মেঘ
+void drawCloudType2(float x, float y, float s) {
+    drawCircleAtPosition(x, y, s*0.7f, 255, 255, 255);
+    drawCircleAtPosition(x + s*0.6f, y, s*0.9f, 255, 255, 255);
+    drawCircleAtPosition(x + s*1.3f, y, s*0.8f, 255, 255, 255);
+    drawCircleAtPosition(x + s*2.0f, y, s*0.6f, 255, 255, 255);
+}
+
+// টাইপ ৩: বড় ও ঘন মেঘ
+void drawCloudType3(float x, float y, float s) {
+    drawCircleAtPosition(x, y, s, 255, 255, 255);
+    drawCircleAtPosition(x + s*0.7f, y + s*0.5f, s*1.1f, 255, 255, 255);
+    drawCircleAtPosition(x + s*0.7f, y - s*0.3f, s*0.9f, 255, 255, 255);
+    drawCircleAtPosition(x + s*1.4f, y + s*0.2f, s*1.2f, 255, 255, 255);
+    drawCircleAtPosition(x + s*2.1f, y, s*0.8f, 255, 255, 255);
+}
+void clouds() {
+    if (!isDay) return; // শুধু দিনে দেখাবে
+
+    glPushMatrix();
+    glTranslatef(cloudX, 0, 0);
+
+    // প্রথম সেট (সামনের মেঘ)
+    drawCloudType1(100, 1400, 45);
+    drawCloudType2(500, 1300, 50);
+    drawCloudType3(900, 1450, 55);
+    drawCloudType1(1300, 1350, 40);
+    drawCloudType2(1700, 1420, 48);
+    drawCloudType3(2100, 1300, 60);
+    drawCloudType1(2500, 1400, 42);
+
+    // দ্বিতীয় সেট (অফসেট দিয়ে যাতে স্ক্রিন খালি না লাগে)
+    drawCloudType2(-300, 1380, 50);
+    drawCloudType1(-700, 1430, 40);
+    drawCloudType3(-1100, 1320, 55);
+    drawCloudType2(-1500, 1460, 45);
+    drawCloudType1(-2000, 1340, 40);
+    drawCloudType2(-2500, 1410, 50);
+
+    glPopMatrix();
+}
+void moveClouds(int value) {
+    if (isDay) {
+        cloudX += 1.2f; // মেঘের গতি
+        if (cloudX > 3000) {
+            cloudX = -2800; // পুরোপুরি স্ক্রিন পার হলে বাম দিক থেকে আবার আসবে
+        }
+    }
+    glutPostRedisplay();
+    glutTimerFunc(16, moveClouds, 0); // ১৬ দিলে মুভমেন্ট আরও স্মুথ হবে
+}
 void display() {
     glClear(GL_COLOR_BUFFER_BIT);
 
     sky();
-
+    clouds();
 
 
     Mountain();
@@ -11611,7 +11676,7 @@ void display() {
     rightBush1();
     drawCircleAtPosition(2199.0f, 1024.0f, 20.0f, 57, 38, 30);
     drawCircleAtPosition(2199.0f, 1024.0f, 10.0f, 92, 62, 44);
-    drawCircleAtPosition(792.0f, 1100.0f, 60.0f, 227, 235, 246);
+    !isDay ? drawCircleAtPosition(792.0f, 1100.0f, 60.0f, 227, 235, 246) : drawCircleAtPosition(792.0f, 1100.0f, 60.0f, 253,214,61);
 
     //drawTree1();
     //drawTree2();
@@ -11737,6 +11802,7 @@ int main(int argc, char** argv) {
     glutTimerFunc(0, updateFire, 0);
     glutTimerFunc(0, moveBoat, 0);
     glutTimerFunc(0, movePlane, 0);
+    glutTimerFunc(0, moveClouds, 0);
     glutKeyboardFunc(keyboard);
     glutMainLoop();
     return 0;
