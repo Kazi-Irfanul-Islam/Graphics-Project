@@ -41,6 +41,22 @@ void traingles(float r, float g, float b, int x1, int y1, int x2, int y2, int x3
     glVertex2f(x3, y3);
     glEnd();
 }
+void ran(){
+
+    glBegin(GL_POLYGON);
+    isDay ? glColor3ub(168,222,82) : glColor3f(0.28627f, 0.435294f, 0.2470588f);
+    glVertex2f(1408,325);
+    glVertex2f(1340,360);
+    glVertex2f(1322,372);
+    glVertex2f(1310,383);
+    glVertex2f(1354,378);
+    glVertex2f(1349,395);
+    glVertex2f(1286,435);
+    glVertex2f(1022,711);
+    glVertex2f(658,665);
+    glVertex2f(875,296);
+    glEnd();
+}
 
 void sky() {
    glBegin(GL_QUADS);
@@ -66,7 +82,7 @@ void sky() {
 }
 void firstMountain_part1() {
     glBegin(GL_POLYGON);
-    glColor3f(0.184f, 0.266f, 0.419f);
+    isDay ? glColor3ub(116,147,176) : glColor3f(0.184f, 0.266f, 0.419f);
     glVertex2f(2.2484208168965, 957.1533681132385);   // I
     glVertex2f(53.1921364742083, 998.8661713770773);  // J
     glVertex2f(93.1245256042413, 1041.5007522527517); // K
@@ -174,7 +190,7 @@ void firstMountain_part1() {
 
 void firstMountain_part2() {
     glBegin(GL_POLYGON);
-    glColor3f(0.227f, 0.333f, 0.522f);
+    isDay ? glColor3ub(135,165,193) : glColor3f(0.227f, 0.333f, 0.522f);
     glVertex2f(275.7507450562923, 1032.539512256761);
     glVertex2f(282.8517166783651, 1037.831576058316); // O4
     glVertex2f(289.1620313817161, 1042.8452507541292);// P4
@@ -340,7 +356,7 @@ void firstMountain_part2() {
 
 void firstMountain_part3() {
     glBegin(GL_POLYGON);
-    glColor3f(0.365f, 0.451f, 0.576f);
+    isDay ? glColor3ub(194,214,225) : glColor3f(0.365f, 0.451f, 0.576f);
     glVertex2f(437.5321754793462, 992.8351872965811);  // A6
     glVertex2f(444.178164264145, 985.9815113622572);   // B6
     glVertex2f(449.9076689615716, 977.0859690539734);  // C6
@@ -387,7 +403,7 @@ void firstMountain_part3() {
 
 void firstMountain_part4() {
     glBegin(GL_POLYGON);
-    glColor3f(0.408f, 0.506f, 0.682f);
+    isDay ? glColor3ub(208,218,230) : glColor3f(0.408f, 0.506f, 0.682f);
     glVertex2f(93.1245256042413, 1041.5007522527517); // K
     glVertex2f(130.228316673588, 1051.3026360076688); // L
     glVertex2f(150.6148863843223, 1056.059502273507); // M
@@ -508,7 +524,7 @@ void firstMountain_part4() {
 void firstMountain_part5()
 {
     glBegin(GL_POLYGON);
-    glColor3f(0.639f, 0.667f, 0.792f);
+    isDay ? glColor3ub(254,254,254) : glColor3f(0.639f, 0.667f, 0.792f);
     glVertex2f(370.5109706757642, 1280.0452869842084); // R17
     glVertex2f(372.3938274324896, 1276.7603028554533); // Q17
     glVertex2f(375.2782037406647, 1275.8789656501776); // P17
@@ -737,7 +753,7 @@ void firstMountain_part5()
 
 void firstMountain_part6() {
     glBegin(GL_POLYGON);
-    glColor3f(0.365f, 0.451f, 0.576f);
+    isDay ? glColor3ub(214,222,231) : glColor3f(0.365f, 0.451f, 0.576f);
     glVertex2f(435.2489620965687, 1118.1072845775504); // S17
     glVertex2f(425.1388033308958, 1142.388239645929);  // T17
     glVertex2f(417.5147491797326, 1165.8404931761372); // U17
@@ -776,7 +792,7 @@ void firstMountain_part6() {
 
 void firstMountain_part7() {
     glBegin(GL_POLYGON);
-    glColor3f(0.353f, 0.451f, 0.592f);
+    isDay ? glColor3ub(195,214,228) : glColor3f(0.353f, 0.451f, 0.592f);
     glVertex2f(652.7007991141872, 1038.4838209030838); // O15
     glVertex2f(657.3412327174769, 1038.5651915193278); // P15
     glVertex2f(663.357153991339, 1038.6454038029792);  // Q15
@@ -894,7 +910,7 @@ void firstMountain_part7() {
 
 void firstMountain_part8() {
     glBegin(GL_POLYGON);
-    glColor3f(0.235f, 0.329f, 0.490f);
+    isDay ? glColor3ub(135,165,190) : glColor3f(0.235f, 0.329f, 0.490f);
     glVertex2f(593.380803204033, 936.6732904376279);   // Q23
     glVertex2f(602.7642156130462, 926.638773959297);   // R23
     glVertex2f(615, 915);                              // S23
@@ -975,7 +991,7 @@ void firstMountain_part8() {
 
 void firstMountain_part9() {
     glBegin(GL_POLYGON);
-    glColor3ub(74,97,143);
+    isDay ? glColor3ub(158,184,207) : glColor3ub(74,97,143);
     glVertex2f(444.0336643270388, 834.3277232895416); // V7
     glVertex2f(578.141021156547, 852.4350314637014); // E
     glVertex2f(653.7749134939494, 767.4502010188309);  // L26
@@ -1013,7 +1029,7 @@ void firstMountain_part9() {
 void SecondMount_part1()
 {
     glBegin(GL_POLYGON);
-    glColor3f(0.231f, 0.329f, 0.522f);
+    isDay ? glColor3ub(132,166,191) : glColor3f(0.231f, 0.329f, 0.522f);
     glVertex2f(925.1049158930109, 932.902902520286);  // Z41
     glVertex2f(931.2434428128101, 936.9952538001521); // A42
     glVertex2f(937.2540837551135, 943.7732106074302); // B42
@@ -1094,7 +1110,7 @@ void SecondMount_part1()
 void SecondMount_part2()
 {
     glBegin(GL_POLYGON);
-    glColor3f(0.639f, 0.667f, 0.792f);
+    isDay ? glColor3ub(254,254,255) : glColor3f(0.639f, 0.667f, 0.792f);
     glVertex2f(795.4032286643915, 952.7173148568493);
     glVertex2f(802.0292355278921, 959.3709487795529);  // Z43
     glVertex2f(810.5684602534993, 967.0682781096775);  // A44
@@ -1158,7 +1174,7 @@ void SecondMount_part2()
 void SecondMount_part3()
 {
     glBegin(GL_POLYGON);
-    glColor3f(0.376f, 0.455f, 0.627f);
+    isDay ? glColor3ub(207,217,229) : glColor3f(0.376f, 0.455f, 0.627f);
     glVertex2f(999.1248700533007, 1113.0381615148117);
     glVertex2f(1006.6159488830738, 1107.2856089722268);
     glVertex2f(1012.2425805318964, 1101.584942696446);
@@ -1244,7 +1260,7 @@ void SecondMount_part3()
 void SecondMount_part4()
 {
     glBegin(GL_POLYGON);
-    glColor3f(0.184f, 0.282f, 0.467f);
+    isDay ? glColor3ub(116,147,176) : glColor3f(0.184f, 0.282f, 0.467f);
     glVertex2f(1213.4934716260068, 956.2271770426643);
     glVertex2f(1216.0423778270092, 952.131052512684);  // F49
     glVertex2f(1220.8552169509996, 946.743545030234);  // G49
@@ -1319,7 +1335,7 @@ void SecondMount_part4()
 void SecondMount_part5()
 {
     glBegin(GL_POLYGON);
-    glColor3f(0.208f, 0.314f, 0.506f);
+    isDay ? glColor3ub(137,167,191) : glColor3f(0.208f, 0.314f, 0.506f);
     glVertex2f(1133.3587866203306, 873.80682187);   // V51
     glVertex2f(1137.6524973232824, 870.45236738);   // W51
     glVertex2f(1142.6171003235704, 863.74344441);   // Z51
@@ -1384,7 +1400,7 @@ void SecondMount_part5()
 void SecondMount_part6()
 {
     glBegin(GL_POLYGON);
-    glColor3f(0.208f, 0.314f, 0.506f);
+    isDay ? glColor3ub(137,167,191) : glColor3f(0.208f, 0.314f, 0.506f);
     glVertex2f(1298.2394169862591, 698.5899662179515); // G54
     glVertex2f(1310.5837608438699, 676.0995863129904); // H54
     glVertex2f(1324.450010108583, 654.1165082103967);  // I54
@@ -1424,7 +1440,7 @@ void SecondMount_part6()
 
 void thirdMountain_part1() {
     glBegin(GL_POLYGON);
-    glColor3f(0.443f, 0.549f, 0.686f);
+    isDay ? glColor3ub(206,222,237) : glColor3f(0.443f, 0.549f, 0.686f);
     glVertex2f(1738.3239071730877, 930.983291588668);  // F73
     glVertex2f(1746.6376721865881, 940.1878171393308); // G73
     glVertex2f(1753.7637564838744, 950.4315633166815); // H73
@@ -1556,7 +1572,7 @@ void thirdMountain_part1() {
 
 void thirdMountain_part2() {
     glBegin(GL_POLYGON);
-    glColor3f(0.573f, 0.612f, 0.749f);
+    isDay ? glColor3ub(255,254,252) : glColor3f(0.573f, 0.612f, 0.749f);
     glVertex2f(1960.4204041908774, 1062.85632619207);  // A78
     glVertex2f(1964.958546042173, 1063.4381392499283); // B78
     glVertex2f(1965.307633876888, 1060.412711349064);  // C78
@@ -1787,7 +1803,7 @@ void thirdMountain_part2() {
 
 void thirdMountain_part3() {
     glBegin(GL_POLYGON);
-    glColor3f(0.247f, 0.353f, 0.545f);
+    isDay ? glColor3ub(136,164,188) : glColor3f(0.247f, 0.353f, 0.545f);
     glVertex2f(2129.1446144130164, 1033.2349575052685); // S86
     glVertex2f(2120.0, 1040.0);                         // T86
     glVertex2f(2113.6729115809076, 1049.2311248401638); // U86
@@ -1867,7 +1883,7 @@ void thirdMountain_part3() {
 
 void thirdMountain_part4() {
     glBegin(GL_POLYGON);
-    glColor3f(0.337f, 0.435f, 0.643f);
+    isDay ? glColor3ub(184,200,223) : glColor3f(0.337f, 0.435f, 0.643f);
     glVertex2f(1494.7529729778473, 756.6915226672422);
     glVertex2f(1774.5110707972847, 598.3984550550631);
     glVertex2f(2117.720723991471, 709.9407510860113);
@@ -1888,7 +1904,7 @@ void thirdMountain_part4() {
 void thirdMountain_part5()
 {
     glBegin(GL_POLYGON);
-    glColor3f(0.247f, 0.353f, 0.545f);
+    isDay ? glColor3ub(155,181,204) : glColor3f(0.247f, 0.353f, 0.545f);
     glVertex2f(1877.7061389049418, 913.0719720724678); // R90
     glVertex2f(1885.0595663591205, 918.177905006725);  // S90
     glVertex2f(1889.8997399632092, 922.3788103989539); // T90
@@ -1969,7 +1985,7 @@ void thirdMountain_part5()
 
 void thirdMountain_part6() {
     glBegin(GL_POLYGON);
-    glColor3f(0.408f, 0.494f, 0.671f);
+    isDay? glColor3ub(209,220,232) : glColor3f(0.408f, 0.494f, 0.671f);
     glVertex2f(2095.7862465511375, 1212.986805741633);
     glVertex2f(1774.5110707972847, 598.3984550550631);
     glVertex2f(2117.720723991471, 709.9407510860113);
@@ -2016,7 +2032,7 @@ void thirdMountain_part6() {
 void thirdMountain_part7()
 {
     glBegin(GL_TRIANGLES);
-    glColor3f(0.208f, 0.310f, 0.510f);
+    isDay? glColor3ub(209,220,232) : glColor3f(0.408f, 0.494f, 0.671f);
     glVertex2f(2290.4140606729648, 1056.9389794052142);
     glVertex2f(2396.939568145847, 994.0605008968727);
     glVertex2f(2302.7890803793907, 922.1516026027587);
@@ -2025,7 +2041,7 @@ void thirdMountain_part7()
 
 void fourthMountain_part1() {
     glBegin(GL_POLYGON);
-    glColor3f(0.337f, 0.435f, 0.643f);
+    isDay ? glColor3ub(158,182,206) : glColor3f(0.337f, 0.435f, 0.643f);
     glVertex2f(2311.2384950785125, 765.2343232145612);  // F99
     glVertex2f(2299.8732104536782, 772.3494082210543);  // G99
     glVertex2f(2290.4321098734567, 778.6543109234567);  // H99
@@ -2133,7 +2149,7 @@ void fourthMountain_part1() {
 void fourthMountain_part2() {
 
     glBegin(GL_POLYGON);
-    glColor3f(0.208f, 0.310f, 0.510f);
+    isDay ? glColor3ub(134,160,185) : glColor3f(0.208f, 0.310f, 0.510f);
     glVertex2f(2310.1123789245357, 837.4657596784028);  // C95
     glVertex2f(2320.7549512942555, 842.1382733640274);  // D95
     glVertex2f(2334.9103474516673, 851.0990287297305);  // E95
@@ -2239,7 +2255,7 @@ void fourthMountain_part2() {
 
 void fourthMountain_part3() {
     glBegin(GL_POLYGON);
-    glColor3f(0.208f, 0.310f, 0.510f);
+    isDay ? glColor3ub(116,147,176) : glColor3f(0.208f, 0.310f, 0.510f);
     glVertex2f(2440, 800);
     glVertex2f(2689.927371415713, 1046.5953710881683);  // K103
     glVertex2f(2712.031971114653, 1065.2401203994523);  // L103
@@ -2273,7 +2289,7 @@ void fourthMountain_part3() {
 
 void fourthMountain_part4() {
     glBegin(GL_POLYGON);
-    glColor3f(0.537f, 0.584f, 0.733f);
+    isDay ? glColor3ub(254,254,254) : glColor3f(0.537f, 0.584f, 0.733f);
     glVertex2f(2504, 1074);
     glVertex2f(2514.142523166066, 1083.6191466059);     // M104
     glVertex2f(2522.350650755799, 1089.85519150291);    // N104
@@ -2388,7 +2404,7 @@ void fourthMountain_part4() {
 
 void fourthMountain_part5() {
     glBegin(GL_POLYGON);
-    glColor3f(0.408f, 0.494f, 0.671f);
+    isDay ? glColor3ub(208,216,229) : glColor3f(0.408f, 0.494f, 0.671f);
     glVertex2f(2696.0480645254515, 1183.1793903766927);
     glVertex2f(2795.544137, 1305.51429);
     glVertex2f(2800.5275457271114, 1304.6302198084027); // A109
@@ -2412,7 +2428,9 @@ void fourthMountain_part5() {
     glEnd();
 }
 void Mountain() {
+
     thirdMountain_part6();
+
     thirdMountain_part4();
 
     SecondMount_part4();
@@ -2422,17 +2440,10 @@ void Mountain() {
     SecondMount_part2();
     SecondMount_part1();
 
-    firstMountain_part9();
-    firstMountain_part5();
-    firstMountain_part4();
-    firstMountain_part1();
-    firstMountain_part2();
-    firstMountain_part3();
-    firstMountain_part6();
-    firstMountain_part7();
-    firstMountain_part8();
 
     thirdMountain_part1();
+
+
     thirdMountain_part2();
     thirdMountain_part3();
     thirdMountain_part5();
@@ -2443,6 +2454,7 @@ void Mountain() {
     fourthMountain_part4();
     fourthMountain_part1();
     fourthMountain_part2();
+
 }
 void House1Part1()
 {
@@ -2469,7 +2481,7 @@ void House1Part1()
 void Fieldleft()
 {
     glBegin(GL_POLYGON);
-    glColor3f(0.28627f, 0.435294f, 0.2470588f);
+    isDay ? glColor3ub(168,222,82) : glColor3f(0.28627f, 0.435294f, 0.2470588f);
     glVertex2f(990.9768758876278, 600.1129675781855);
     glVertex2f(1208.7085014992135, 566.0696945007356);
     glVertex2f(1223.3487316499657, 562.8404805762242);
@@ -2579,7 +2591,7 @@ void leftbigfield()
 void rightbigField()
 {
     glBegin(GL_POLYGON);
-    glColor3f(0.286f, 0.420f, 0.294f);
+    isDay ? glColor3ub(115,166,48) : glColor3f(0.286f, 0.420f, 0.294f);
     glVertex2f(2840.2586610830676, 194.2851492844589); // E37
     glVertex2f(2783.6762006044773, 210.7585238541747); // F37
     glVertex2f(2737.83724528005, 227.9481321008347);   // G37
@@ -2695,7 +2707,7 @@ void windmill()
 
     //left part
     glBegin(GL_QUADS);
-    glColor3f(0.502f, 0.353f, 0.255f);
+    isDay ? glColor3ub(208,151,90) : glColor3f(0.502f, 0.353f, 0.255f);
     glVertex2f(2105,764);
     glVertex2f(2153,764);
     glVertex2f(2171,1005);
@@ -2704,7 +2716,7 @@ void windmill()
 
 
     glBegin(GL_QUADS);
-    glColor3f(0.35f, 0.25f, 0.15f);
+    isDay ? glColor3ub(179,118,64) : glColor3f(0.35f, 0.25f, 0.15f);
     glVertex2f(2153,764);
     glVertex2f(2247,764);
     glVertex2f(2299,1005);
@@ -2713,7 +2725,7 @@ void windmill()
 
 
     glBegin(GL_QUADS);
-    glColor3f(0.380f, 0.251f, 0.176f);
+    isDay ? glColor3ub(150,96,48) : glColor3f(0.380f, 0.251f, 0.176f);
     glVertex2f(2247,764);
     glVertex2f(2333,764);
     glVertex2f(2299,1005);
@@ -2722,7 +2734,7 @@ void windmill()
 
 
     glBegin(GL_QUADS);
-    glColor3f(0.502f, 0.353f, 0.255f);
+    isDay ? glColor3ub(195,145,85) : glColor3f(0.502f, 0.353f, 0.255f);
     glVertex2f(2110,675);
     glVertex2f(2151,675);
     glVertex2f(2153,764);
@@ -2730,7 +2742,7 @@ void windmill()
     glEnd();
 
     glBegin(GL_QUADS);
-    glColor3f(0.35f, 0.25f, 0.15f);
+    isDay ? glColor3ub(168,110,62) :glColor3f(0.35f, 0.25f, 0.15f);
     glVertex2f(2151,675);
     glVertex2f(2247,674);
     glVertex2f(2247,764);
@@ -2739,7 +2751,7 @@ void windmill()
 
 
     glBegin(GL_QUADS);
-    glColor3f(0.380f, 0.251f, 0.176f);
+    isDay ? glColor3ub(143,90,54):glColor3f(0.380f, 0.251f, 0.176f);
     glVertex2f(2247,674);
     glVertex2f(2333,674);
     glVertex2f(2319,764);
@@ -2751,7 +2763,7 @@ void windmill()
 
 
     glBegin(GL_QUADS);
-    glColor3f(0.247f, 0.165f, 0.137f);
+    isDay ? glColor3ub(121,77,42) : glColor3f(0.247f, 0.165f, 0.137f);
     glVertex2f(2192,1114);
     glVertex2f(2263,1114);
     glVertex2f(2337,1001);
@@ -2760,7 +2772,7 @@ void windmill()
 
 
     glBegin(GL_QUADS);
-    glColor3f(0.247f, 0.165f, 0.137f);
+    isDay ? glColor3ub(121,77,42) : glColor3f(0.247f, 0.165f, 0.137f);
     glVertex2f(2109,1001);
     glVertex2f(2130,1001);
     glVertex2f(2202,1100);
@@ -2768,7 +2780,7 @@ void windmill()
     glEnd();
 
     glBegin(GL_TRIANGLES);
-    glColor3f(0.408f, 0.278f, 0.196f);
+    isDay ? glColor3ub(174,113,59) : glColor3f(0.408f, 0.278f, 0.196f);
     glVertex2f(2130,1002);
     glVertex2f(2273,1002);
     glVertex2f(2202,1100);
@@ -3116,7 +3128,7 @@ void applySmoothGrassColor(float y) {
 void FieldLeftShadow1()
 {
     glBegin(GL_POLYGON);
-    glColor3ub(86,114,78);
+    isDay ? glColor3ub(143,192,66) : glColor3ub(86,114,78);
     /* ========================================================= */
     /* === Vertex Points without Smooth Color Function ===       */
     /* ========================================================= */
@@ -3310,13 +3322,14 @@ void FieldLeftShadow1()
 void river()
 {
 
+
     glBegin(GL_POLYGON);
-    glColor3ub(65,124,175);
-    glVertex2f(1326.8169310005283f, 534.099026400409f);  // J135
-    glVertex2f(1696.0697621541644f, 561.5620496775562f); // K135
-    glVertex2f(2844.8950401222305f, 321.4445770979818f); // L135
-    glVertex2f(2841.8580572153937f, -5.2594600910508f);  // M135
-    glVertex2f(1262.0279813164595f, 9.9153817513911f);   // N135
+        isDay ? glColor3ub(135, 211, 234) : glColor3ub(65, 124, 175);
+        glVertex2f(1326.8169310005283f, 534.099026400409f);  // J135
+        glVertex2f(1696.0697621541644f, 561.5620496775562f); // K135
+        glVertex2f(2844.8950401222305f, 321.4445770979818f); // L135
+        glVertex2f(2841.8580572153937f, -5.2594600910508f);  // M135
+        glVertex2f(1262.0279813164595f, 9.9153817513911f);   // N135
     glEnd();
 }
 
@@ -4175,56 +4188,30 @@ void fireBase()
 
 void leftTree1()
 {
-    glShadeModel(GL_SMOOTH);
 
-    glBegin(GL_TRIANGLE_FAN);
-
-
-    glColor3f(0.25f, 0.60f, 0.20f);
+    glBegin(GL_POLYGON);
+    isDay ? glColor3ub(63,133,78) : glColor3ub(24,70,57);
     glVertex2f(100.0f, 680.0f);
-
-
-    glColor3f(0.05f, 0.35f, 0.15f);
     glVertex2f(42.4132535438051, 637.8347522466834);
     glVertex2f(2.0186163246173, 630.2745667320143);
-
-    glColor3f(0.30f, 0.65f, 0.20f);
     glVertex2f(47.021995740788, 715.0139464199194);
     glVertex2f(19.0453998842849, 713.6380482630422);
-
-
-    glColor3f(0.60f, 0.85f, 0.20f);
     glVertex2f(60, 800);
     glVertex2f(41.0597703943201, 803.0714284600601);
-
-    glColor3f(0.85f, 0.95f, 0.10f);
     glVertex2f(61.2869612076189, 844.2400547068208);
     glVertex2f(77.7028063537097, 890.3902608722457);
-
-
-    glColor3f(1.0f, 1.0f, 0.0f);
     glVertex2f(89.4726575905295, 930.9652743465455);
-
-    glColor3f(0.85f, 0.95f, 0.10f);
     glVertex2f(100, 900);
     glVertex2f(106.8177015184745, 876.142546217148);
-
-
-    glColor3f(0.60f, 0.85f, 0.20f);
     glVertex2f(140, 800);
     glVertex2f(120, 800);
-
-
-    glColor3f(0.30f, 0.65f, 0.20f);
     glVertex2f(167.2156223389973, 703.9310386468377);
     glVertex2f(141.1980564470798, 707.9575667015392);
     glVertex2f(155.3047528720382, 674.314588156723);
-    glColor3f(0.05f, 0.35f, 0.15f);
     glVertex2f(212.1581659146803, 450.2608552720253);
     glVertex2f(72.2088373999233, 443.9020924112475);
     glVertex2f(1.3181976611817, 428.1373685054527);
     glVertex2f(1.2310146415085, 567.1813825085812);
-    glColor3f(0.05f, 0.35f, 0.15f);
     glVertex2f(42.4132535438051, 637.8347522466834);
 
 glEnd();
@@ -4232,7 +4219,7 @@ glEnd();
 
 void lefttree2() {
     glBegin(GL_POLYGON);
-    glColor3ub(24,70,57);
+    isDay ? glColor3ub(36,120,70) : glColor3ub(24,70,57);
     /* ========================================================= */
     /* === Points from image_4900c7.png (D251 to G252) ===       */
     /* ========================================================= */
@@ -4334,7 +4321,7 @@ void lefttree2() {
 
 
     glBegin(GL_POLYGON);
-    glColor3ub(57,100,84);
+     isDay ? glColor3ub(27,103,67) : glColor3ub(12,59,52);
     glVertex2f(209.3628033517760f, 911.7271558455849f);  // W251
     glVertex2f(212.5513170244573f, 920.0970042363718f);  // Z251
     glVertex2f(215.0755570153299f, 927.0054505271801f);  // A252
@@ -4440,7 +4427,7 @@ void lefttree2() {
 
 void lefttree3() {
     glBegin(GL_POLYGON);
-    glColor3ub(24,70,57);
+    isDay ? glColor3ub(63,133,78) : glColor3ub(24,70,57);
     /* ========================================================= */
     /* === Points from image_49d71b.png (C256 to F257) ===       */
     /* ========================================================= */
@@ -4550,7 +4537,7 @@ void lefttree3() {
 
 void lefttree4() {
     glBegin(GL_POLYGON);
-    glColor3ub(24,70,57);
+    isDay ? glColor3ub(63,133,78) : glColor3ub(24,70,57);
     /* ========================================================= */
     /* === Points from image_49ece1.png (R259 to U260) ===       */
     /* ========================================================= */
@@ -4648,7 +4635,7 @@ void lefttree4() {
 
 void lefttree5() {
     glBegin(GL_POLYGON);
-    glColor3ub(24,70,57);
+    isDay ? glColor3ub(63,133,78) : glColor3ub(24,70,57);
     /* ========================================================= */
     /* === Points from image_4a65be.png (Z262 to C264) ===       */
     /* ========================================================= */
@@ -4760,7 +4747,7 @@ void lefttree5() {
 
 void rightShadowPart1() {
     glBegin(GL_POLYGON);
-    glColor3ub(86,114,78);
+    isDay ? glColor3ub(143,192,66) : glColor3ub(86,114,78);
     /* ========================================================= */
     /* === Points from image_4b375b.png (Q266 to R267) ===       */
     /* ========================================================= */
@@ -6006,7 +5993,7 @@ void grass2_part2() {
 void ShamnerGrass1()
 {
     glBegin(GL_POLYGON);
-    glColor3f(0.0510,0.2000,0.2000);
+    isDay ? glColor3ub(30,120,66) : glColor3f(0.0510,0.2000,0.2000);
     glVertex2f(265.0931160943622f, 20.0569775757708f);   // L125
     glVertex2f(268.6721309738896f, 25.0044393210002f);   // M125
     glVertex2f(272.2511458534171f, 31.0045525013848f);   // N125
@@ -6199,7 +6186,7 @@ void ShamnerGrass1()
 void ShamnerGrass2()
 {
     glBegin(GL_POLYGON);
-    glColor3f(0.0510,0.2000,0.2000);
+    isDay ? glColor3ub(14,93,61) : glColor3f(0.0510,0.2000,0.2000);
     glVertex2f(183.3840614272681f, 68.2374574173625f);   // E132
     glVertex2f(183.9275681051651f, 75.5247040730418f);   // F132
     glVertex2f(184.3894091826725f, 80.8358764643765f);   // G132
@@ -6463,7 +6450,7 @@ void ShamnerGrass2()
 void ShamnerGrass3()
 {
     glBegin(GL_POLYGON);
-    glColor3ub(25,65,56);
+    isDay ? glColor3ub(34,118,68) : glColor3ub(25,65,56);
     glVertex2f(178.2931412730047f, 129.7533757873783f);  // C141
     glVertex2f(178.2931412730047f, 123.8591305176099f);  // D141
     glVertex2f(178.0898914361161f, 119.6925088613943f);  // E141
@@ -6580,7 +6567,7 @@ void grass2() {
 void riverflowpart1()
 {
     glBegin(GL_POLYGON);
-    glColor3ub(86,148,189);
+    isDay ? glColor3ub(183,231,244) : glColor3ub(86,148,189);
     glVertex2f(1527.0638690415099f, 430.0107731127289f);  // E132
     glVertex2f(1530.9544750222765f, 433.0035469440880f);  // F132
     glVertex2f(1534.2036442004664f, 434.7497714629189f);  // G132
@@ -6666,7 +6653,7 @@ void riverflowpart1()
 void riverflowpart2()
 {
     glBegin(GL_POLYGON);
-    glColor3ub(86,148,189);
+    isDay ? glColor3ub(183,231,244) : glColor3ub(86,148,189);
 
     glVertex2f(1686.9131427500831f, 328.2312348817054f); // O135
     glVertex2f(1696.2970324109126f, 326.8712508728895f); // P135
@@ -6733,7 +6720,7 @@ void riverflowpart2()
 void riverflowpart3()
 {
     glBegin(GL_POLYGON);
-    glColor3ub(86,148,189);
+    isDay ? glColor3ub(183,231,244) : glColor3ub(86,148,189);
 
     glVertex2f(1534.2848488150412f, 335.32271234439f);   // B166
     glVertex2f(1538.7524096808286f, 331.3437909482981f); // C166
@@ -6793,7 +6780,7 @@ void riverflowpart3()
 void riverflowpart4()
 {
     glBegin(GL_POLYGON);
-    glColor3ub(86,148,189);
+    isDay ? glColor3ub(183,231,244) : glColor3ub(86,148,189);
     glVertex2f(1496.5359764230134f, 461.5336270662289f); // S168
     glVertex2f(1496.5359764230134f, 459.233128443896f);  // T168
     glVertex2f(1496.3442682044856f, 456.8687270820538f); // U168
@@ -6857,7 +6844,7 @@ void riverflowpart4()
 void riverflowpart5()
 {
     glBegin(GL_POLYGON);
-    glColor3ub(86,148,189);
+    isDay ? glColor3ub(183,231,244) : glColor3ub(86,148,189);
     glVertex2f(1431.8217271170656f, 378.7036049982245f); // I170
     glVertex2f(1431.6932266908823f, 376.3905973269254f); // J170
     glVertex2f(1432.2072283956154f, 374.0133394425346f); // K170
@@ -6926,7 +6913,7 @@ void riverflowpart5()
 void riverflowpart6()
 {
     glBegin(GL_POLYGON);
-    glColor3ub(86,148,189);
+    isDay ? glColor3ub(183,231,244) : glColor3ub(86,148,189);
     glVertex2f(1920.7062255085762f, 275.1494670319324f); // Z211
     glVertex2f(1924.8136333041630f, 273.8659020958117f); // A212
     glVertex2f(1929.9478930486464f, 272.4967661639496f); // B212
@@ -8058,7 +8045,7 @@ void riverCorner_part3() {
 
 void riverCorner_part4() {
     glBegin(GL_POLYGON);
-    glColor3ub(41,103,155);
+    isDay ? glColor3ub(76,175,208) : glColor3ub(41,103,155);
     /* --------------------------------------------------------- */
     /* --- New Points from image_bd854f.png (Q182 to S183) ---   */
     /* --------------------------------------------------------- */
@@ -8479,6 +8466,17 @@ void fullleftfield()
     river();
     leftbigfield();
 
+    ran();
+      firstMountain_part9();
+    firstMountain_part5();
+    firstMountain_part4();
+    firstMountain_part1();
+    firstMountain_part2();
+    firstMountain_part3();
+    firstMountain_part6();
+    firstMountain_part7();
+    firstMountain_part8();
+
     FieldLeftShadow1();
     fireBase();
     firewood();
@@ -8815,7 +8813,7 @@ void rt()
 {
 
     glBegin(GL_POLYGON);
-    glColor3ub(24,70,57);
+    isDay ? glColor3ub(63,133,78) : glColor3ub(24,70,57);
     /* ========================================================= */
     /* === Points from image_3d36c3.png (N229 to Q230) ===       */
     /* ========================================================= */
@@ -8902,7 +8900,7 @@ void rt()
 
 
     glBegin(GL_POLYGON);
-    glColor3ub(24,70,57);
+    isDay ? glColor3ub(63,133,78) : glColor3ub(24,70,57);
     /* ========================================================= */
     /* === Points from image_471fcb.png (I232 to J233) ===       */
     /* ========================================================= */
@@ -8968,7 +8966,7 @@ void rt()
 
 
     glBegin(GL_POLYGON);
-    glColor3ub(24,70,57);
+    isDay ? glColor3ub(63,133,78) : glColor3ub(24,70,57);
     /* ========================================================= */
     /* === Points from image_472f29.png (L234 to N235) ===       */
     /* ========================================================= */
@@ -9153,7 +9151,7 @@ void rt()
 void rightTree1() {
 
     glBegin(GL_POLYGON);
-    glColor3ub(12,59,52);
+    isDay ? glColor3ub(27,103,67) : glColor3ub(12,59,52);
     /* ========================================================= */
     /* === Points from image_cb1dc5.png (L186 to M187) ===       */
     /* ========================================================= */
@@ -9373,7 +9371,7 @@ void rightTree1() {
 
 
     glBegin(GL_POLYGON);
-    glColor3ub(24,70,57);
+    isDay ? glColor3ub(36,120,70) : glColor3ub(24,70,57);
     /* --------------------------------------------------------- */
     /* --- New Points from image_cab505.png (E180 to H181) ---   */
     /* --------------------------------------------------------- */
@@ -9554,7 +9552,7 @@ void rightTree1() {
 
 void rightTree2() {
     glBegin(GL_POLYGON);
-    glColor3ub(12,59,52);
+     isDay ? glColor3ub(27,103,67) : glColor3ub(12,59,52);
     /* ========================================================= */
     /* === Points from image_cc0d8b.png (Q204 to S205) ===       */
     /* ========================================================= */
@@ -9763,23 +9761,8 @@ void rightTree2() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     glBegin(GL_POLYGON);
-    glColor3ub(24,70,57);
+    isDay ? glColor3ub(36,120,70) : glColor3ub(24,70,57);
     /* ========================================================= */
     /* === Points from image_cb9a27.png (E194 to G195) ===       */
     /* ========================================================= */
@@ -10077,7 +10060,7 @@ void rightTree2() {
 
 void rightTree3() {
     glBegin(GL_POLYGON);
-    glColor3ub(24,70,57);
+    isDay ? glColor3ub(27,103,67) : glColor3ub(12,59,52);
     /* ========================================================= */
     /* === Points from image_3a7120.png (H222 to K223) ===       */
     /* ========================================================= */
@@ -10222,7 +10205,7 @@ void rightTree3() {
 
 void rightTree4() {
     glBegin(GL_POLYGON);
-    glColor3ub(24,70,57);
+    isDay ? glColor3ub(63,133,78) : glColor3ub(24,70,57);
      glVertex2f(1897.7900355975040f, 690.1150025586137f); // O227
     glVertex2f(1893.6604772614562f, 691.4915220039626f); // P227
     glVertex2f(1892.4090959475025f, 689.8647262958231f); // Q227
@@ -10297,7 +10280,7 @@ void rightTree4() {
 void rightBush1() {
 
     glBegin(GL_POLYGON);
-    glColor3ub(58,98,86);
+    isDay ? glColor3ub(63,133,78) : glColor3ub(24,70,57);
     /* ========================================================= */
     /* === Points from image_47aba6.png (T240 to W241) ===       */
     /* ========================================================= */
@@ -10612,7 +10595,7 @@ void rightBush1() {
 
 void rightBush2() {
     glBegin(GL_POLYGON);
-    glColor3ub(59, 95, 87);
+    isDay ? glColor3ub(63,133,78) : glColor3ub(24,70,57);
     /* ========================================================= */
     /* === Points from image_481802.png (L245 to O246) ===       */
     /* ========================================================= */
@@ -11577,6 +11560,7 @@ void bakiGrass() {
 
 }
 
+
 void display() {
     glClear(GL_COLOR_BUFFER_BIT);
 
@@ -11612,6 +11596,7 @@ void display() {
     rightTree3();
     rightTree4();
     rt();
+    plane();
     windmillpaka();
 
     glBegin(GL_QUADS);
@@ -11627,7 +11612,7 @@ void display() {
     drawCircleAtPosition(2199.0f, 1024.0f, 20.0f, 57, 38, 30);
     drawCircleAtPosition(2199.0f, 1024.0f, 10.0f, 92, 62, 44);
     drawCircleAtPosition(792.0f, 1100.0f, 60.0f, 227, 235, 246);
-    plane();
+
     //drawTree1();
     //drawTree2();
     //drawWater();
